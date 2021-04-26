@@ -1,0 +1,305 @@
+﻿@page "/edit-invoice/{InvoiceId}"
+@layout MainLayout
+@inherits SimpleInvoiceManagementSoftware.Pages.EditInvoiceComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using SimpleInvoiceManagementSoftware.Models.SimpleInvoice
+@using Microsoft.AspNetCore.Identity;
+@using SimpleInvoiceManagementSoftware.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+
+<RadzenContent Container="main">
+  <ChildContent>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="InvoiceNumber" style="width: 100%" Text="Invoice Number">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenTextBox Disabled="true" MaxLength="100" style="display: block; width: 100%" @bind-Value="@(invoice.InvoiceNumber)" Name="InvoiceNumber">
+            </RadzenTextBox>
+            <RadzenRequiredValidator Component="InvoiceNumber" style="position: absolute" Text="InvoiceNumber is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="InvoiceDate" style="width: 100%" Text="Invoice Date">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenDatePicker DateFormat="yyyy-MM-dd" style="display: block; width: 100%" @bind-Value="@(invoice.InvoiceDate)" Name="InvoiceDate">
+            </RadzenDatePicker>
+            <RadzenRequiredValidator Component="InvoiceDate" style="position: absolute" Text="InvoiceDate is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="TaxId" style="width: 100%" Text="Tax">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenDropDownDataGrid Data="@getTaxesForTaxIdResult" Placeholder="Choose Tax" ShowSearch="false" style="width: 100%" TextProperty="Name" @bind-Value="@(invoice.TaxId)" ValueProperty="TaxId" Name="TaxId" Change="@TaxIdChange">
+            </RadzenDropDownDataGrid>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="InvoiceDueDate" style="width: 100%" Text="Invoice Due Date">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenDatePicker DateFormat="yyyy-MM-dd" style="display: block; width: 100%" @bind-Value="@(invoice.InvoiceDueDate)" Name="InvoiceDueDate">
+            </RadzenDatePicker>
+            <RadzenRequiredValidator Component="InvoiceDueDate" style="position: absolute" Text="InvoiceDueDate is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="CompanyId" style="width: 100%" Text="Company">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenDropDownDataGrid Data="@getCompaniesForCompanyIdResult" Placeholder="Choose Company" ShowSearch="false" style="width: 100%" TextProperty="Name" @bind-Value="@(invoice.CompanyId)" ValueProperty="CompanyId" Name="CompanyId" Change="@CompanyIdChange">
+            </RadzenDropDownDataGrid>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="CustomerId" style="width: 100%" Text="Customer">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenDropDownDataGrid Data="@getCustomersForCustomerIdResult" Placeholder="Choose Customer" ShowSearch="false" style="width: 100%" TextProperty="Name" @bind-Value="@(invoice.CustomerId)" ValueProperty="CustomerId" Name="CustomerId" Change="@CustomerIdChange">
+            </RadzenDropDownDataGrid>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="CompanyAddress" style="width: 100%" Text="Address">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenTextBox Disabled="true" style="width: 100%" @bind-Value="@CompanyAddress" Name="CompanyAddress">
+            </RadzenTextBox>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="CustomerAddress" style="width: 100%" Text="Address">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenTextBox Disabled="true" style="width: 100%" @bind-Value="@CustomerAddress" Name="CustomerAddress">
+            </RadzenTextBox>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="CompanyCity" style="width: 100%" Text="City">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenTextBox Disabled="true" style="width: 100%" @bind-Value="@CompanyCity" Name="CompanyCity">
+            </RadzenTextBox>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="CustomerCity" style="width: 100%" Text="City">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenTextBox Disabled="true" style="width: 100%" @bind-Value="@CustomerCity" Name="CustomerCity">
+            </RadzenTextBox>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom: 20px" class="row">
+      <div class="col-md-6">
+        <RadzenButton Icon="add_circle_outline" Text="Add Item" Click="@BtnAddClick">
+        </RadzenButton>
+        <RadzenButton Icon="get_app" style="margin-left: 10px" Text="Print Invoice" Click="@BtnPrintInvoiceClick">
+        </RadzenButton>
+      </div>
+      <div class="col-md-6">
+      </div>
+    </div>
+    <div style="margin-bottom: 20px" class="row">
+      <div class="col-md-12">
+        <RadzenGrid @ref="grid0" Data="@InvoiceLines" EditMode="DataGridEditMode.Multiple" TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine">
+          <Columns>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" Property="InvoiceLineId" Title="Invoice Line Id" Visible="false">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" FilterProperty="Invoice.InvoiceNumber" Property="InvoiceId" SortProperty="Invoice.InvoiceNumber" Title="Invoice" Visible="false">
+              <Template Context="data">
+              @(data.Invoice?.InvoiceNumber)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" Property="Invoice" Title="Invoice" Visible="false">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" FilterProperty="Product.Name" Property="ProductId" SortProperty="Product.Name" Title="Product">
+              <Template Context="data">
+              @(data.Product?.Name)
+              </Template>
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" Property="Product" Title="Product" Visible="false">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" Property="Qty" Title="Qty">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" Property="UnitPrice" Title="Unit Price">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine" Property="Total" Title="Total">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine">
+              <Template Context="simpleInvoiceManagementSoftwareModelsSimpleInvoiceInvoiceLine">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>BtnDeleteClick(args, simpleInvoiceManagementSoftwareModelsSimpleInvoiceInvoiceLine))">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="Total" style="width: 100%" Text="Total">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenNumeric Disabled="true" style="display: block; width: 100%" @bind-Value="@(invoice.Total)" Name="Total">
+            </RadzenNumeric>
+            <RadzenRequiredValidator Component="Total" style="position: absolute" Text="Total is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="Discount" style="width: 100%" Text="Discount">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenNumeric style="display: block; width: 100%" @bind-Value="@(invoice.Discount)" TValue="double" Name="Discount" Change="@DiscountChange">
+            </RadzenNumeric>
+            <RadzenRequiredValidator Component="Discount" style="position: absolute" Text="Discount is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="BeforeTax" style="width: 100%" Text="Before Tax">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenNumeric Disabled="true" style="display: block; width: 100%" @bind-Value="@(invoice.BeforeTax)" Name="BeforeTax">
+            </RadzenNumeric>
+            <RadzenRequiredValidator Component="BeforeTax" style="position: absolute" Text="BeforeTax is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="TaxAmount" style="width: 100%" Text="Tax Amount">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenNumeric Disabled="true" style="display: block; width: 100%" @bind-Value="@(invoice.TaxAmount)" Name="TaxAmount">
+            </RadzenNumeric>
+            <RadzenRequiredValidator Component="TaxAmount" style="position: absolute" Text="TaxAmount is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <div style="margin-bottom: 1rem" class="row">
+          <div class="col-md-3">
+            <RadzenLabel Component="GrandTotal" style="width: 100%" Text="Grand Total">
+            </RadzenLabel>
+          </div>
+          <div class="col-md-9">
+            <RadzenNumeric Disabled="true" style="display: block; width: 100%" @bind-Value="@(invoice.GrandTotal)" Name="GrandTotal">
+            </RadzenNumeric>
+            <RadzenRequiredValidator Component="GrandTotal" style="position: absolute" Text="GrandTotal is required">
+            </RadzenRequiredValidator>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top: 20px" class="row">
+      <div class="col-md-12">
+        <RadzenTemplateForm Data="@invoice" TItem="SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice" Visible="@(invoice != null)" Submit="@Form0Submit">
+          <ChildContent>
+            <div class="row">
+              <div class="col offset-sm-3">
+                <RadzenButton ButtonStyle="ButtonStyle.Primary" ButtonType="ButtonType.Submit" Icon="save" Text="Save">
+                </RadzenButton>
+                <RadzenButton ButtonStyle="ButtonStyle.Light" style="margin-left: 1rem" Text="Cancel" Click="@BtnCancelClick">
+                </RadzenButton>
+              </div>
+            </div>
+          </ChildContent>
+        </RadzenTemplateForm>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

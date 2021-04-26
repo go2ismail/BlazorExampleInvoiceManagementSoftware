@@ -1,0 +1,1421 @@
+{
+  "info": {
+    "title": "SimpleInvoice",
+    "x-type": "odata",
+    "x-connector": "mssql",
+    "x-connector-version": 14
+  },
+  "definitions": {
+    "Company": {
+      "x-table": "dbo.Company",
+      "resource": "Companies",
+      "required": [
+        "Name",
+        "Address",
+        "City"
+      ],
+      "properties": {
+        "CompanyId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Company",
+              "name": "Invoices",
+              "type": "Invoice"
+            }
+          ]
+        },
+        "Name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Description": {
+          "type": "string",
+          "length": 200
+        },
+        "Address": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "City": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Invoices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Invoice"
+          }
+        }
+      }
+    },
+    "Customer": {
+      "x-table": "dbo.Customer",
+      "resource": "Customers",
+      "required": [
+        "Name",
+        "Address",
+        "City"
+      ],
+      "properties": {
+        "CustomerId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Customer",
+              "name": "Invoices",
+              "type": "Invoice"
+            }
+          ]
+        },
+        "Name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Description": {
+          "type": "string",
+          "length": 200
+        },
+        "Address": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 200
+        },
+        "City": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Invoices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Invoice"
+          }
+        }
+      }
+    },
+    "Invoice": {
+      "x-table": "dbo.Invoice",
+      "resource": "Invoices",
+      "required": [
+        "InvoiceNumber",
+        "InvoiceDate",
+        "InvoiceDueDate",
+        "Total",
+        "Discount",
+        "BeforeTax",
+        "TaxAmount",
+        "GrandTotal"
+      ],
+      "properties": {
+        "InvoiceId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Invoice",
+              "name": "InvoiceLines",
+              "type": "InvoiceLine"
+            }
+          ]
+        },
+        "InvoiceNumber": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Company": {
+          "type": "object",
+          "$ref": "#/definitions/Company"
+        },
+        "CompanyId": {
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Company",
+            "parentEntityType": "Company",
+            "type": "Company",
+            "principalKey": "CompanyId",
+            "name": "Company",
+            "textProperty": "Name",
+            "navigationProperty": "Invoices"
+          }
+        },
+        "Customer": {
+          "type": "object",
+          "$ref": "#/definitions/Customer"
+        },
+        "CustomerId": {
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Customer",
+            "parentEntityType": "Customer",
+            "type": "Customer",
+            "principalKey": "CustomerId",
+            "name": "Customer",
+            "textProperty": "Name",
+            "navigationProperty": "Invoices"
+          }
+        },
+        "InvoiceDate": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime2"
+        },
+        "InvoiceDueDate": {
+          "x-nullable": false,
+          "type": "string",
+          "format": "date-time",
+          "x-datetime": "datetime2"
+        },
+        "Tax": {
+          "type": "object",
+          "$ref": "#/definitions/Tax"
+        },
+        "TaxId": {
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Tax",
+            "parentEntityType": "Tax",
+            "type": "Tax",
+            "principalKey": "TaxId",
+            "name": "Tax",
+            "textProperty": "Name",
+            "navigationProperty": "Invoices"
+          }
+        },
+        "Total": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "Discount": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "BeforeTax": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "TaxAmount": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "GrandTotal": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "InvoiceLines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InvoiceLine"
+          }
+        }
+      }
+    },
+    "InvoiceLine": {
+      "x-table": "dbo.InvoiceLine",
+      "resource": "InvoiceLines",
+      "required": [
+        "InvoiceId",
+        "Qty",
+        "UnitPrice",
+        "Total"
+      ],
+      "properties": {
+        "InvoiceLineId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer"
+        },
+        "Invoice": {
+          "type": "object",
+          "$ref": "#/definitions/Invoice"
+        },
+        "InvoiceId": {
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Invoice",
+            "parentEntityType": "Invoice",
+            "type": "Invoice",
+            "principalKey": "InvoiceId",
+            "name": "Invoice",
+            "textProperty": "InvoiceNumber",
+            "navigationProperty": "InvoiceLines"
+          }
+        },
+        "Product": {
+          "type": "object",
+          "$ref": "#/definitions/Product"
+        },
+        "ProductId": {
+          "x-precision": 10,
+          "type": "integer",
+          "x-foreignKey": {
+            "parentTable": "Product",
+            "parentEntityType": "Product",
+            "type": "Product",
+            "principalKey": "ProductId",
+            "name": "Product",
+            "textProperty": "Name",
+            "navigationProperty": "InvoiceLines"
+          }
+        },
+        "Qty": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "UnitPrice": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "Total": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "Product": {
+      "x-table": "dbo.Product",
+      "resource": "Products",
+      "required": [
+        "Name",
+        "UnitPrice"
+      ],
+      "properties": {
+        "ProductId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Product",
+              "name": "InvoiceLines",
+              "type": "InvoiceLine"
+            }
+          ]
+        },
+        "Name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Description": {
+          "type": "string",
+          "length": 200
+        },
+        "UnitPrice": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "InvoiceLines": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/InvoiceLine"
+          }
+        }
+      }
+    },
+    "Tax": {
+      "x-table": "dbo.Tax",
+      "resource": "Taxes",
+      "required": [
+        "Name",
+        "TaxTariffPercentage"
+      ],
+      "properties": {
+        "TaxId": {
+          "x-key": true,
+          "x-identity": true,
+          "x-nullable": false,
+          "x-precision": 10,
+          "type": "integer",
+          "x-navigation": [
+            {
+              "inversePropertyName": "Tax",
+              "name": "Invoices",
+              "type": "Invoice"
+            }
+          ]
+        },
+        "Name": {
+          "x-nullable": false,
+          "type": "string",
+          "length": 100
+        },
+        "Description": {
+          "type": "string",
+          "length": 200
+        },
+        "TaxTariffPercentage": {
+          "x-nullable": false,
+          "x-precision": 53,
+          "type": "number",
+          "format": "double"
+        },
+        "Invoices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Invoice"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/Companies": {
+      "get": {
+        "operationId": "getCompanies",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Company"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createCompany",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Company",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Customers": {
+      "get": {
+        "operationId": "getCustomers",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Customer"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createCustomer",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Customer",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Invoices": {
+      "get": {
+        "operationId": "getInvoices",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Invoice"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createInvoice",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Invoice",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/InvoiceLines": {
+      "get": {
+        "operationId": "getInvoiceLines",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/InvoiceLine"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createInvoiceLine",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "InvoiceLine",
+            "schema": {
+              "$ref": "#/definitions/InvoiceLine"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/InvoiceLine"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Products": {
+      "get": {
+        "operationId": "getProducts",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Product"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createProduct",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Taxes": {
+      "get": {
+        "operationId": "getTaxes",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$filter",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$expand",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "properties": {
+                "value": {
+                  "items": {
+                    "$ref": "#/definitions/Tax"
+                  },
+                  "type": "array"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createTax",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Tax",
+            "schema": {
+              "$ref": "#/definitions/Tax"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "schema": {
+              "$ref": "#/definitions/Tax"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Companies({CompanyId})": {
+      "delete": {
+        "operationId": "deleteCompany",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "CompanyId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getCompanyByCompanyId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "CompanyId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateCompany",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "CompanyId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Company",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelCompanyChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Company",
+            "schema": {
+              "$ref": "#/definitions/Company"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Customers({CustomerId})": {
+      "delete": {
+        "operationId": "deleteCustomer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "CustomerId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getCustomerByCustomerId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "CustomerId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateCustomer",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "CustomerId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Customer",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelCustomerChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Customer",
+            "schema": {
+              "$ref": "#/definitions/Customer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Invoices({InvoiceId})": {
+      "delete": {
+        "operationId": "deleteInvoice",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "InvoiceId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getInvoiceByInvoiceId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "InvoiceId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateInvoice",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "InvoiceId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Invoice",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelInvoiceChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Invoice",
+            "schema": {
+              "$ref": "#/definitions/Invoice"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/InvoiceLines({InvoiceLineId})": {
+      "delete": {
+        "operationId": "deleteInvoiceLine",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "InvoiceLineId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getInvoiceLineByInvoiceLineId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "InvoiceLineId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/InvoiceLine"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateInvoiceLine",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "InvoiceLineId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "InvoiceLine",
+            "schema": {
+              "$ref": "#/definitions/InvoiceLine"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelInvoiceLineChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "InvoiceLine",
+            "schema": {
+              "$ref": "#/definitions/InvoiceLine"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Products({ProductId})": {
+      "delete": {
+        "operationId": "deleteProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ProductId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getProductByProductId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ProductId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateProduct",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "ProductId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelProductChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Product",
+            "schema": {
+              "$ref": "#/definitions/Product"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/Taxes({TaxId})": {
+      "delete": {
+        "operationId": "deleteTax",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "TaxId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "getTaxByTaxId",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "TaxId",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": "#/definitions/Tax"
+            }
+          },
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateTax",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "TaxId",
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "Tax",
+            "schema": {
+              "$ref": "#/definitions/Tax"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "cancel": {
+        "operationId": "cancelTaxChanges",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Tax",
+            "schema": {
+              "$ref": "#/definitions/Tax"
+            }
+          }
+        ],
+        "responses": {
+          "204": {},
+          "default": {
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "basePath": "/odata/SimpleInvoice",
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ]
+}

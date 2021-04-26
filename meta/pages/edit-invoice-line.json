@@ -1,0 +1,391 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "type": "template-form",
+                  "name": "form0",
+                  "components": [
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Invoice",
+                              "component": "InvoiceId",
+                              "name": "InvoiceIdLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getInvoicesForInvoiceIdResult}",
+                              "textProperty": "InvoiceNumber",
+                              "valueProperty": "InvoiceId",
+                              "placeholder": "Choose Invoice",
+                              "valueType": "int",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "InvoiceId",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${invoiceline.InvoiceId}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "InvoiceIdRequiredValidator",
+                              "component": "InvoiceId",
+                              "text": "InvoiceId is required",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "defaultValue": "0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Product",
+                              "component": "ProductId",
+                              "name": "ProductIdLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getProductsForProductIdResult}",
+                              "textProperty": "Name",
+                              "valueProperty": "ProductId",
+                              "placeholder": "Choose Product",
+                              "valueType": "int?",
+                              "showSearch": false,
+                              "type": "dropdown-datagrid",
+                              "name": "ProductId",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "value": "${invoiceline.ProductId}"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Qty",
+                              "component": "Qty",
+                              "name": "QtyLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "Qty",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${invoiceline.Qty}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "QtyRequiredValidator",
+                              "component": "Qty",
+                              "text": "Qty is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Unit Price",
+                              "component": "UnitPrice",
+                              "name": "UnitPriceLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "UnitPrice",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${invoiceline.UnitPrice}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "UnitPriceRequiredValidator",
+                              "component": "UnitPrice",
+                              "text": "UnitPrice is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "type": "label",
+                              "text": "Total",
+                              "component": "Total",
+                              "name": "TotalLabel",
+                              "style": {
+                                "width": "100%"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "col",
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "valueType": "double",
+                              "type": "numeric",
+                              "name": "Total",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "value": "${invoiceline.Total}"
+                            },
+                            {
+                              "type": "required-validator",
+                              "name": "TotalRequiredValidator",
+                              "component": "Total",
+                              "text": "Total is required",
+                              "style": {
+                                "position": "absolute"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "row",
+                      "components": [
+                        {
+                          "type": "col",
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "type": "button",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "buttonStyle": "primary"
+                            },
+                            {
+                              "type": "button",
+                              "buttonStyle": "light",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update InvoiceLine",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "SimpleInvoice.updateInvoiceLine",
+                        "parameters": [
+                          {
+                            "name": "InvoiceLineId",
+                            "value": "${parameters.InvoiceLineId}"
+                          },
+                          {
+                            "name": "InvoiceLine",
+                            "value": "${invoiceline}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "type": "close-popup",
+                            "result": "${invoiceline}",
+                            "condition": ""
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                  "data": "${invoiceline}",
+                  "visible": "${invoiceline != null}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "SimpleInvoice.getInvoiceLineByInvoiceLineId",
+        "parameters": [
+          {
+            "name": "InvoiceLineId",
+            "value": "${parameters.InvoiceLineId}"
+          }
+        ],
+        "then": [
+          {
+            "name": "invoiceline",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine"
+          }
+        ],
+        "error": [],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getInvoices",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInvoicesForInvoiceIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getProducts",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProductsForProductIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Product>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Edit Invoice Line",
+  "layout": "Main",
+  "access": [
+    "Authenticated"
+  ]
+}

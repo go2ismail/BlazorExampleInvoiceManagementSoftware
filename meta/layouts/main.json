@@ -1,0 +1,133 @@
+{
+  "components": [
+    {
+      "components": [
+        {
+          "class": "justify-content-start align-items-center",
+          "components": [
+            {
+              "class": "col-6 d-flex align-items-center",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "code": "await InvokeAsync(() => { sidebar0.Toggle(); });",
+                        "type": "execute"
+                      },
+                      {
+                        "code": "await InvokeAsync(() => { body0.Toggle(); });",
+                        "type": "execute"
+                      }
+                    ]
+                  },
+                  "name": "sidebar-toggle0",
+                  "type": "sidebar-toggle"
+                },
+                {
+                  "name": "label0",
+                  "text": "SimpleInvoiceManagementSoftware",
+                  "type": "label"
+                }
+              ],
+              "name": "leftCol",
+              "type": "col"
+            },
+            {
+              "class": "col-6 text-right",
+              "components": [
+                {
+                  "name": "profilemenu0",
+                  "template": [
+                    {
+                      "email": "${Security.User?.Name}",
+                      "type": "gravatar"
+                    }
+                  ],
+                  "type": "profilemenu",
+                  "visible": "${Security.IsAuthenticated()}"
+                }
+              ],
+              "name": "rightCol",
+              "type": "col"
+            }
+          ],
+          "name": "headerRow",
+          "type": "row"
+        }
+      ],
+      "name": "header0",
+      "type": "header"
+    },
+    {
+      "components": [
+        {
+          "name": "main",
+          "type": "content-container"
+        }
+      ],
+      "name": "body0",
+      "type": "body"
+    },
+    {
+      "components": [
+        {
+          "items": [
+            {
+              "path": "companies",
+              "text": "Companies",
+              "visible": "@Security.IsInRole(new string[]{\"Everybody\"})"
+            },
+            {
+              "path": "customers",
+              "text": "Customers",
+              "visible": "@Security.IsInRole(new string[]{\"Everybody\"})"
+            },
+            {
+              "path": "invoices",
+              "text": "Invoices",
+              "visible": "@Security.IsInRole(new string[]{\"Everybody\"})"
+            },
+            {
+              "path": "products",
+              "text": "Products",
+              "visible": "@Security.IsInRole(new string[]{\"Everybody\"})"
+            },
+            {
+              "path": "taxes",
+              "text": "Taxes",
+              "visible": "@Security.IsInRole(new string[]{\"Everybody\"})"
+            },
+            {
+              "path": "application-users",
+              "text": "Users"
+            },
+            {
+              "path": "application-roles",
+              "text": "Roles"
+            }
+          ],
+          "name": "panelmenu0",
+          "style": {
+            "height": "100%"
+          },
+          "type": "panelmenu"
+        }
+      ],
+      "name": "sidebar0",
+      "type": "sidebar"
+    },
+    {
+      "components": [
+        {
+          "name": "footerText",
+          "text": "SimpleInvoiceManagementSoftware, Copyright Ⓒ 2021",
+          "type": "label"
+        }
+      ],
+      "name": "footer0",
+      "type": "footer"
+    }
+  ],
+  "name": "Main"
+}

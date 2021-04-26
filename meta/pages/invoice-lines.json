@@ -1,0 +1,301 @@
+{
+  "components": [
+    {
+      "type": "content",
+      "container": "main",
+      "components": [
+        {
+          "type": "heading",
+          "name": "pageTitle",
+          "size": "H1",
+          "text": "Invoice Lines"
+        },
+        {
+          "type": "row",
+          "components": [
+            {
+              "type": "col",
+              "class": "col-md-12",
+              "components": [
+                {
+                  "icon": "add_circle_outline",
+                  "name": "button0",
+                  "style": {
+                    "marginBottom": "10px"
+                  },
+                  "text": "Add",
+                  "type": "button",
+                  "events": {
+                    "click": [
+                      {
+                        "path": "add-invoice-line",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "condition": "${event?.Value == \"csv\"}",
+                        "fileName": "Invoice Lines",
+                        "name": "SimpleInvoice.getInvoiceLines",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": "Invoice,Product"
+                          },
+                          {
+                            "name": "$select",
+                            "value": "InvoiceLineId,Invoice.InvoiceNumber,Product.Name,Qty,UnitPrice,Total"
+                          }
+                        ],
+                        "type": "export"
+                      },
+                      {
+                        "condition": "${event == null || event.Value == \"xlsx\"}",
+                        "fileName": "Invoice Lines",
+                        "format": "xlsx",
+                        "name": "SimpleInvoice.getInvoiceLines",
+                        "parameters": [
+                          {
+                            "name": "$filter",
+                            "value": "${grid0.Query.Filter}"
+                          },
+                          {
+                            "name": "$orderby",
+                            "value": "${grid0.Query.OrderBy}"
+                          },
+                          {
+                            "name": "$expand",
+                            "value": "Invoice,Product"
+                          },
+                          {
+                            "name": "$select",
+                            "value": "InvoiceLineId,Invoice.InvoiceNumber,Product.Name,Qty,UnitPrice,Total"
+                          }
+                        ],
+                        "type": "export"
+                      }
+                    ]
+                  },
+                  "icon": "get_app",
+                  "items": [
+                    {
+                      "icon": "",
+                      "text": "Excel",
+                      "value": "xlsx"
+                    },
+                    {
+                      "icon": "",
+                      "text": "CSV",
+                      "value": "csv"
+                    }
+                  ],
+                  "name": "splitbutton0",
+                  "style": {
+                    "marginLeft": "10px",
+                    "marginBottom": "10px"
+                  },
+                  "text": "Export",
+                  "type": "splitbutton"
+                },
+                {
+                  "attributes": [
+                    {
+                      "name": "@oninput",
+                      "value": "@(async(args) => {search = $\"{args.Value}\";await grid0.GoToPage(0);await Load();})"
+                    }
+                  ],
+                  "name": "textbox0",
+                  "placeholder": "Search ...",
+                  "style": {
+                    "display": "block",
+                    "marginBottom": "10px",
+                    "width": "100%"
+                  },
+                  "type": "textbox",
+                  "value": ""
+                },
+                {
+                  "name": "grid0",
+                  "allowFiltering": true,
+                  "filterMode": "advanced",
+                  "allowPaging": true,
+                  "allowSorting": true,
+                  "data": "${getInvoiceLinesResult}",
+                  "events": {
+                    "loadData": [],
+                    "rowSelect": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "InvoiceLineId",
+                            "value": "${event.InvoiceLineId}"
+                          }
+                        ],
+                        "path": "edit-invoice-line",
+                        "type": "popup",
+                        "then": [
+                          {
+                            "code": "await InvokeAsync(() => { StateHasChanged(); });",
+                            "type": "execute"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "title": "",
+                  "columns": [
+                    {
+                      "property": "InvoiceLineId",
+                      "title": "Invoice Line Id"
+                    },
+                    {
+                      "property": "InvoiceId",
+                      "sortProperty": "Invoice.InvoiceNumber",
+                      "filterProperty": "Invoice.InvoiceNumber",
+                      "template": "${data.Invoice?.InvoiceNumber}",
+                      "title": "Invoice"
+                    },
+                    {
+                      "property": "ProductId",
+                      "sortProperty": "Product.Name",
+                      "filterProperty": "Product.Name",
+                      "template": "${data.Product?.Name}",
+                      "title": "Product"
+                    },
+                    {
+                      "property": "Qty",
+                      "title": "Qty"
+                    },
+                    {
+                      "property": "UnitPrice",
+                      "title": "Unit Price"
+                    },
+                    {
+                      "property": "Total",
+                      "title": "Total"
+                    },
+                    {
+                      "filterable": false,
+                      "sortable": false,
+                      "width": "70px",
+                      "textAlign": "center",
+                      "template": [
+                        {
+                          "attributes": [
+                            {
+                              "name": "@onclick:stopPropagation",
+                              "value": true
+                            }
+                          ],
+                          "buttonStyle": "danger",
+                          "icon": "close",
+                          "name": "gridDeleteButton",
+                          "text": "",
+                          "size": "sm",
+                          "type": "button",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete InvoiceLine",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "SimpleInvoice.deleteInvoiceLine",
+                                "parameters": [
+                                  {
+                                    "name": "InvoiceLineId",
+                                    "value": "${data.InvoiceLineId}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ],
+                  "type": "grid",
+                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "condition": "string.IsNullOrEmpty(search)",
+        "name": "search",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "SimpleInvoice.getInvoiceLines",
+        "parameters": [
+          {
+            "name": "$filter",
+            "operator": "or",
+            "value": []
+          },
+          {
+            "name": "$expand",
+            "value": "Invoice,Product"
+          }
+        ],
+        "then": [
+          {
+            "name": "getInvoiceLinesResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>"
+          }
+        ],
+        "type": "invoke"
+      }
+    ]
+  },
+  "name": "Invoice Lines",
+  "layout": "Main",
+  "access": [
+    "Authenticated"
+  ]
+}

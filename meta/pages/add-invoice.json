@@ -1,0 +1,657 @@
+{
+  "access": [
+    "Authenticated"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-9",
+                                  "components": [
+                                    {
+                                      "data": "${getCompaniesForCompanyIdResult}",
+                                      "events": {
+                                        "change": [
+                                          {
+                                            "name": "CompanySelected",
+                                            "parameters": [
+                                              {
+                                                "name": "companyId",
+                                                "type": "int",
+                                                "value": "${event}"
+                                              }
+                                            ],
+                                            "schema": {
+                                              "$ref": "#/definitions/Task",
+                                              "dotnetType": "System.Threading.Tasks.Task"
+                                            },
+                                            "type": "invoke-method"
+                                          }
+                                        ]
+                                      },
+                                      "name": "CompanyId",
+                                      "placeholder": "Choose Company",
+                                      "showSearch": false,
+                                      "style": {
+                                        "width": "100%"
+                                      },
+                                      "textProperty": "Name",
+                                      "type": "dropdown-datagrid",
+                                      "value": "${invoice.CompanyId}",
+                                      "valueProperty": "CompanyId",
+                                      "valueType": "int?"
+                                    }
+                                  ],
+                                  "name": "col4",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row1",
+                              "style": {
+                                "marginBottom": "1rem"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "name": "col2",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-9",
+                                  "components": [
+                                    {
+                                      "data": "${getCustomersForCustomerIdResult}",
+                                      "events": {
+                                        "change": [
+                                          {
+                                            "name": "CustomerSelected",
+                                            "parameters": [
+                                              {
+                                                "name": "customerId",
+                                                "type": "int",
+                                                "value": "${event}"
+                                              }
+                                            ],
+                                            "schema": {
+                                              "$ref": "#/definitions/Task",
+                                              "dotnetType": "System.Threading.Tasks.Task"
+                                            },
+                                            "type": "invoke-method"
+                                          }
+                                        ]
+                                      },
+                                      "name": "CustomerId",
+                                      "placeholder": "Choose Customer",
+                                      "showSearch": false,
+                                      "style": {
+                                        "width": "100%"
+                                      },
+                                      "textProperty": "Name",
+                                      "type": "dropdown-datagrid",
+                                      "value": "${invoice.CustomerId}",
+                                      "valueProperty": "CustomerId",
+                                      "valueType": "int?"
+                                    }
+                                  ],
+                                  "name": "col6",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row2",
+                              "style": {
+                                "marginBottom": "1rem"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "name": "col1",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-3",
+                                  "components": [
+                                    {
+                                      "component": "InvoiceNumber",
+                                      "name": "InvoiceNumberLabel",
+                                      "style": {
+                                        "width": "100%"
+                                      },
+                                      "text": "Invoice Number",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col7",
+                                  "type": "col"
+                                },
+                                {
+                                  "class": "col-md-9",
+                                  "components": [
+                                    {
+                                      "disabled": true,
+                                      "maxLength": 100,
+                                      "name": "InvoiceNumber",
+                                      "style": {
+                                        "display": "block",
+                                        "width": "100%"
+                                      },
+                                      "type": "textbox",
+                                      "value": "${invoice.InvoiceNumber}",
+                                      "valueType": "string"
+                                    },
+                                    {
+                                      "component": "InvoiceNumber",
+                                      "name": "InvoiceNumberRequiredValidator",
+                                      "style": {
+                                        "position": "absolute"
+                                      },
+                                      "text": "InvoiceNumber is required",
+                                      "type": "required-validator"
+                                    }
+                                  ],
+                                  "name": "col8",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row3",
+                              "style": {
+                                "marginBottom": "1rem"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "name": "col0",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row0",
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "disabled": true,
+                              "name": "txtCompanyAddress",
+                              "type": "textbox",
+                              "value": "${CompanyAddress}"
+                            }
+                          ],
+                          "name": "col11",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "disabled": true,
+                              "name": "txtCustomerAddress",
+                              "type": "textbox",
+                              "value": "${CustomerAddress}"
+                            }
+                          ],
+                          "name": "col10",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-3",
+                                  "components": [
+                                    {
+                                      "component": "InvoiceDate",
+                                      "name": "InvoiceDateLabel",
+                                      "style": {
+                                        "width": "100%"
+                                      },
+                                      "text": "Invoice Date",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col12",
+                                  "type": "col"
+                                },
+                                {
+                                  "class": "col-md-9",
+                                  "components": [
+                                    {
+                                      "dateFormat": "yyyy-MM-dd",
+                                      "name": "InvoiceDate",
+                                      "style": {
+                                        "display": "block",
+                                        "width": "100%"
+                                      },
+                                      "type": "datepicker",
+                                      "value": "${invoice.InvoiceDate}",
+                                      "valueType": "DateTime"
+                                    },
+                                    {
+                                      "component": "InvoiceDate",
+                                      "name": "InvoiceDateRequiredValidator",
+                                      "style": {
+                                        "position": "absolute"
+                                      },
+                                      "text": "InvoiceDate is required",
+                                      "type": "required-validator"
+                                    }
+                                  ],
+                                  "name": "col13",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row5",
+                              "style": {
+                                "marginBottom": "1rem"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "name": "col9",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row4",
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "disabled": true,
+                              "name": "txtCompanyCity",
+                              "type": "textbox",
+                              "value": "${CompanyCity}"
+                            }
+                          ],
+                          "name": "col15",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-12",
+                                  "components": [
+                                    {
+                                      "disabled": true,
+                                      "name": "txtCustomerCity",
+                                      "type": "textbox",
+                                      "value": "${CustomerCity}"
+                                    }
+                                  ],
+                                  "name": "col19",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row9",
+                              "type": "row"
+                            }
+                          ],
+                          "name": "col16",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-3",
+                                  "components": [
+                                    {
+                                      "component": "InvoiceDueDate",
+                                      "name": "InvoiceDueDateLabel",
+                                      "style": {
+                                        "width": "100%"
+                                      },
+                                      "text": "Invoice Due Date",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col17",
+                                  "type": "col"
+                                },
+                                {
+                                  "class": "col-md-9",
+                                  "components": [
+                                    {
+                                      "dateFormat": "yyyy-MM-dd",
+                                      "name": "InvoiceDueDate",
+                                      "style": {
+                                        "display": "block",
+                                        "width": "100%"
+                                      },
+                                      "type": "datepicker",
+                                      "value": "${invoice.InvoiceDueDate}",
+                                      "valueType": "DateTime"
+                                    },
+                                    {
+                                      "component": "InvoiceDueDate",
+                                      "name": "InvoiceDueDateRequiredValidator",
+                                      "style": {
+                                        "position": "absolute"
+                                      },
+                                      "text": "InvoiceDueDate is required",
+                                      "type": "required-validator"
+                                    }
+                                  ],
+                                  "name": "col18",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row7",
+                              "style": {
+                                "marginBottom": "1rem"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "name": "col14",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row6",
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-8",
+                          "components": [],
+                          "name": "col22",
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-4",
+                          "components": [
+                            {
+                              "components": [
+                                {
+                                  "class": "col-md-3",
+                                  "components": [
+                                    {
+                                      "component": "TaxId",
+                                      "name": "TaxIdLabel",
+                                      "style": {
+                                        "width": "100%"
+                                      },
+                                      "text": "Tax",
+                                      "type": "label"
+                                    }
+                                  ],
+                                  "name": "col46",
+                                  "type": "col"
+                                },
+                                {
+                                  "class": "col-md-9",
+                                  "components": [
+                                    {
+                                      "data": "${getTaxesForTaxIdResult}",
+                                      "name": "TaxId",
+                                      "placeholder": "Choose Tax",
+                                      "showSearch": false,
+                                      "style": {
+                                        "width": "100%"
+                                      },
+                                      "textProperty": "Name",
+                                      "type": "dropdown-datagrid",
+                                      "value": "${invoice.TaxId}",
+                                      "valueProperty": "TaxId",
+                                      "valueType": "int?"
+                                    }
+                                  ],
+                                  "name": "col47",
+                                  "type": "col"
+                                }
+                              ],
+                              "name": "row24",
+                              "style": {
+                                "marginBottom": "1rem"
+                              },
+                              "type": "row"
+                            }
+                          ],
+                          "name": "col45",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row23",
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              },
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginTop": "20px",
+                        "textAlign": "left"
+                      },
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${invoice}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to create new Invoice!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "SimpleInvoice.createInvoice",
+                        "parameters": [
+                          {
+                            "name": "Invoice",
+                            "value": "${invoice}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "name": "ResetDraftInvoiceNumber",
+                            "parameters": [
+                              {
+                                "name": "invoice",
+                                "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                                "value": "${invoice}"
+                              }
+                            ],
+                            "schema": {
+                              "$ref": "#/definitions/Task",
+                              "dotnetType": "System.Threading.Tasks.Task"
+                            },
+                            "type": "invoke-method"
+                          },
+                          {
+                            "name": "RedirectToEdit",
+                            "parameters": [
+                              {
+                                "name": "invoice",
+                                "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                                "value": "${invoice}"
+                              }
+                            ],
+                            "schema": {
+                              "$ref": "#/definitions/Task",
+                              "dotnetType": "System.Threading.Tasks.Task"
+                            },
+                            "type": "invoke-method"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${invoice != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "SimpleInvoice.getCompanies",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getCompaniesForCompanyIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getCustomers",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getCustomersForCustomerIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Customer>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getTaxes",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTaxesForTaxIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Tax>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "invoice",
+        "type": "set",
+        "value": "new SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice(){}",
+        "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice"
+      },
+      {
+        "name": "SimpleInvoice.getInvoiceLines",
+        "then": [
+          {
+            "name": "getInvoiceLinesResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "CompanyAddress",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "CompanyCity",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "CustomerAddress",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "CustomerCity",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "DataInitialization",
+        "schema": {
+          "$ref": "#/definitions/Task",
+          "dotnetType": "System.Threading.Tasks.Task"
+        },
+        "type": "invoke-method"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Add Invoice"
+}

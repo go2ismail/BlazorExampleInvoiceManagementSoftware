@@ -1,0 +1,1497 @@
+{
+  "access": [
+    "Authenticated"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "InvoiceNumber",
+                          "name": "InvoiceNumberLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Invoice Number",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col2",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "maxLength": 100,
+                          "name": "InvoiceNumber",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "textbox",
+                          "value": "${invoice.InvoiceNumber}",
+                          "valueType": "string"
+                        },
+                        {
+                          "component": "InvoiceNumber",
+                          "name": "InvoiceNumberRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "InvoiceNumber is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col3",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row1",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col1",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "InvoiceDate",
+                          "name": "InvoiceDateLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Invoice Date",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col4",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "dateFormat": "yyyy-MM-dd",
+                          "name": "InvoiceDate",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "datepicker",
+                          "value": "${invoice.InvoiceDate}",
+                          "valueType": "DateTime"
+                        },
+                        {
+                          "component": "InvoiceDate",
+                          "name": "InvoiceDateRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "InvoiceDate is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col5",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row2",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col0",
+              "type": "col"
+            }
+          ],
+          "name": "row0",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "TaxId",
+                          "name": "TaxIdLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Tax",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col7",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "data": "${getTaxesForTaxIdResult}",
+                          "events": {
+                            "change": [
+                              {
+                                "name": "SelectedTax",
+                                "parameters": [
+                                  {
+                                    "name": "taxId",
+                                    "type": "int",
+                                    "value": "${event}"
+                                  },
+                                  {
+                                    "name": "invoiceLines",
+                                    "type": "System.Collections.Generic.IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>",
+                                    "value": "${InvoiceLines}"
+                                  }
+                                ],
+                                "schema": {
+                                  "$ref": "#/definitions/Task",
+                                  "dotnetType": "System.Threading.Tasks.Task"
+                                },
+                                "type": "invoke-method"
+                              }
+                            ]
+                          },
+                          "name": "TaxId",
+                          "placeholder": "Choose Tax",
+                          "showSearch": false,
+                          "style": {
+                            "width": "100%"
+                          },
+                          "textProperty": "Name",
+                          "type": "dropdown-datagrid",
+                          "value": "${invoice.TaxId}",
+                          "valueProperty": "TaxId",
+                          "valueType": "int?"
+                        }
+                      ],
+                      "name": "col8",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row4",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col6",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "InvoiceDueDate",
+                          "name": "InvoiceDueDateLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Invoice Due Date",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col10",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "dateFormat": "yyyy-MM-dd",
+                          "name": "InvoiceDueDate",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "datepicker",
+                          "value": "${invoice.InvoiceDueDate}",
+                          "valueType": "DateTime"
+                        },
+                        {
+                          "component": "InvoiceDueDate",
+                          "name": "InvoiceDueDateRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "InvoiceDueDate is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col11",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row5",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col9",
+              "type": "col"
+            }
+          ],
+          "name": "row3",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "CompanyId",
+                          "name": "CompanyIdLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Company",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col13",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "data": "${getCompaniesForCompanyIdResult}",
+                          "events": {
+                            "change": [
+                              {
+                                "name": "SelectedCompany",
+                                "parameters": [
+                                  {
+                                    "name": "companyId",
+                                    "type": "int",
+                                    "value": "${event}"
+                                  }
+                                ],
+                                "schema": {
+                                  "$ref": "#/definitions/Task",
+                                  "dotnetType": "System.Threading.Tasks.Task"
+                                },
+                                "type": "invoke-method"
+                              }
+                            ]
+                          },
+                          "name": "CompanyId",
+                          "placeholder": "Choose Company",
+                          "showSearch": false,
+                          "style": {
+                            "width": "100%"
+                          },
+                          "textProperty": "Name",
+                          "type": "dropdown-datagrid",
+                          "value": "${invoice.CompanyId}",
+                          "valueProperty": "CompanyId",
+                          "valueType": "int?"
+                        }
+                      ],
+                      "name": "col14",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row7",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col12",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "CustomerId",
+                          "name": "CustomerIdLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Customer",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col16",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "data": "${getCustomersForCustomerIdResult}",
+                          "events": {
+                            "change": [
+                              {
+                                "name": "SelectedCustomer",
+                                "parameters": [
+                                  {
+                                    "name": "customerId",
+                                    "type": "int",
+                                    "value": "${event}"
+                                  }
+                                ],
+                                "schema": {
+                                  "$ref": "#/definitions/Task",
+                                  "dotnetType": "System.Threading.Tasks.Task"
+                                },
+                                "type": "invoke-method"
+                              }
+                            ]
+                          },
+                          "name": "CustomerId",
+                          "placeholder": "Choose Customer",
+                          "showSearch": false,
+                          "style": {
+                            "width": "100%"
+                          },
+                          "textProperty": "Name",
+                          "type": "dropdown-datagrid",
+                          "value": "${invoice.CustomerId}",
+                          "valueProperty": "CustomerId",
+                          "valueType": "int?"
+                        }
+                      ],
+                      "name": "col17",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row8",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col15",
+              "type": "col"
+            }
+          ],
+          "name": "row6",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "CompanyAddress",
+                          "name": "lblCompanyAddress",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Address",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col42",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "name": "CompanyAddress",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "type": "textbox",
+                          "value": "${CompanyAddress}"
+                        }
+                      ],
+                      "name": "col44",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row23",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col40",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "CustomerAddress",
+                          "name": "lblCustomerAddress",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Address",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col46",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "name": "CustomerAddress",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "type": "textbox",
+                          "value": "${CustomerAddress}"
+                        }
+                      ],
+                      "name": "col47",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row24",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col45",
+              "type": "col"
+            }
+          ],
+          "name": "row22",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "CompanyCity",
+                          "name": "lblCompanyCity",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "City",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col49",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "name": "CompanyCity",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "type": "textbox",
+                          "value": "${CompanyCity}"
+                        }
+                      ],
+                      "name": "col50",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row26",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col48",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "CustomerCity",
+                          "name": "lblCustomerCity",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "City",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col52",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "name": "CustomerCity",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "type": "textbox",
+                          "value": "${CustomerCity}"
+                        }
+                      ],
+                      "name": "col53",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row27",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col51",
+              "type": "col"
+            }
+          ],
+          "name": "row25",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "parameters": [
+                          {
+                            "name": "InvoiceId",
+                            "value": "${parameters.InvoiceId}"
+                          }
+                        ],
+                        "path": "add-invoice-line",
+                        "then": [
+                          {
+                            "code": "await grid0.Reload();",
+                            "type": "execute"
+                          },
+                          {
+                            "name": "RecalculateSummary",
+                            "parameters": [
+                              {
+                                "name": "invoice",
+                                "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                                "value": "${invoice}"
+                              },
+                              {
+                                "name": "invoiceLines",
+                                "type": "System.Collections.Generic.IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>",
+                                "value": "${InvoiceLines}"
+                              }
+                            ],
+                            "schema": {
+                              "$ref": "#/definitions/Task",
+                              "dotnetType": "System.Threading.Tasks.Task"
+                            },
+                            "type": "invoke-method"
+                          }
+                        ],
+                        "type": "popup",
+                        "width": 700
+                      }
+                    ]
+                  },
+                  "icon": "add_circle_outline",
+                  "name": "btnAdd",
+                  "text": "Add Item",
+                  "type": "button"
+                },
+                {
+                  "events": {
+                    "click": [
+                      {
+                        "name": "ExportPDF",
+                        "parameters": [
+                          {
+                            "name": "invoice",
+                            "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                            "value": "${invoice}"
+                          }
+                        ],
+                        "schema": {
+                          "$ref": "#/definitions/Task",
+                          "dotnetType": "System.Threading.Tasks.Task"
+                        },
+                        "type": "invoke-method"
+                      }
+                    ]
+                  },
+                  "icon": "get_app",
+                  "name": "btnPrintInvoice",
+                  "style": {
+                    "marginLeft": "10px"
+                  },
+                  "text": "Print Invoice",
+                  "type": "button"
+                }
+              ],
+              "name": "col39",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [],
+              "name": "col43",
+              "type": "col"
+            }
+          ],
+          "name": "row20",
+          "style": {
+            "marginBottom": "20px"
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "columns": [
+                    {
+                      "property": "InvoiceLineId",
+                      "title": "Invoice Line Id",
+                      "visible": false
+                    },
+                    {
+                      "filterProperty": "Invoice.InvoiceNumber",
+                      "property": "InvoiceId",
+                      "sortProperty": "Invoice.InvoiceNumber",
+                      "template": "${data.Invoice?.InvoiceNumber}",
+                      "title": "Invoice",
+                      "visible": false
+                    },
+                    {
+                      "property": "Invoice",
+                      "title": "Invoice",
+                      "visible": false
+                    },
+                    {
+                      "filterProperty": "Product.Name",
+                      "property": "ProductId",
+                      "sortProperty": "Product.Name",
+                      "template": "${data.Product?.Name}",
+                      "title": "Product"
+                    },
+                    {
+                      "property": "Product",
+                      "title": "Product",
+                      "visible": false
+                    },
+                    {
+                      "property": "Qty",
+                      "title": "Qty"
+                    },
+                    {
+                      "property": "UnitPrice",
+                      "title": "Unit Price"
+                    },
+                    {
+                      "property": "Total",
+                      "title": "Total"
+                    },
+                    {
+                      "template": [
+                        {
+                          "buttonStyle": "danger",
+                          "events": {
+                            "click": [
+                              {
+                                "condition": "await DialogService.Confirm(\"Are you sure you want to delete this record?\") == true",
+                                "error": [
+                                  {
+                                    "detail": "Unable to delete InvoiceLine",
+                                    "severity": "error",
+                                    "summary": "Error",
+                                    "type": "notify"
+                                  }
+                                ],
+                                "name": "SimpleInvoice.deleteInvoiceLine",
+                                "parameters": [
+                                  {
+                                    "name": "InvoiceLineId",
+                                    "value": "${data.InvoiceLineId}"
+                                  }
+                                ],
+                                "then": [
+                                  {
+                                    "condition": "result != null",
+                                    "name": "RecalculateMasterAfterChildDelete",
+                                    "parameters": [
+                                      {
+                                        "name": "invoice",
+                                        "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                                        "value": "${invoice}"
+                                      },
+                                      {
+                                        "name": "invoiceLines",
+                                        "type": "System.Collections.Generic.ICollection<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>",
+                                        "value": "${InvoiceLines}"
+                                      }
+                                    ],
+                                    "schema": {
+                                      "$ref": "#/definitions/Task",
+                                      "dotnetType": "System.Threading.Tasks.Task"
+                                    },
+                                    "type": "invoke-method"
+                                  },
+                                  {
+                                    "code": "await grid0.Reload();",
+                                    "condition": "result != null",
+                                    "type": "execute"
+                                  }
+                                ],
+                                "type": "invoke"
+                              }
+                            ]
+                          },
+                          "icon": "close",
+                          "name": "btnDelete",
+                          "size": "sm",
+                          "text": "",
+                          "type": "button"
+                        }
+                      ]
+                    }
+                  ],
+                  "data": "${InvoiceLines}",
+                  "editMode": "multiple",
+                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                  "name": "grid0",
+                  "type": "grid"
+                }
+              ],
+              "name": "col41",
+              "type": "col"
+            }
+          ],
+          "name": "row19",
+          "style": {
+            "marginBottom": "20px"
+          },
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [],
+              "name": "col18",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "Total",
+                          "name": "TotalLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Total",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col26",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "format": "",
+                          "name": "Total",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "numeric",
+                          "value": "${invoice.Total}",
+                          "valueType": "double"
+                        },
+                        {
+                          "component": "Total",
+                          "name": "TotalRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "Total is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col27",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row13",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col21",
+              "type": "col"
+            }
+          ],
+          "name": "row9",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [],
+              "name": "col19",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "Discount",
+                          "name": "DiscountLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Discount",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col28",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "events": {
+                            "change": [
+                              {
+                                "name": "ChangeDiscount",
+                                "parameters": [
+                                  {
+                                    "name": "discountAmount",
+                                    "type": "double",
+                                    "value": "${event}"
+                                  },
+                                  {
+                                    "name": "invoiceLines",
+                                    "type": "System.Collections.Generic.IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>",
+                                    "value": "${InvoiceLines}"
+                                  }
+                                ],
+                                "schema": {
+                                  "$ref": "#/definitions/Task",
+                                  "dotnetType": "System.Threading.Tasks.Task"
+                                },
+                                "type": "invoke-method"
+                              }
+                            ]
+                          },
+                          "format": "",
+                          "name": "Discount",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "numeric",
+                          "value": "${invoice.Discount}",
+                          "valueType": "double"
+                        },
+                        {
+                          "component": "Discount",
+                          "name": "DiscountRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "Discount is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col29",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row14",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col20",
+              "type": "col"
+            }
+          ],
+          "name": "row10",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [],
+              "name": "col22",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "BeforeTax",
+                          "name": "BeforeTaxLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Before Tax",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col30",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "format": "",
+                          "name": "BeforeTax",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "numeric",
+                          "value": "${invoice.BeforeTax}",
+                          "valueType": "double"
+                        },
+                        {
+                          "component": "BeforeTax",
+                          "name": "BeforeTaxRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "BeforeTax is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col31",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row15",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col23",
+              "type": "col"
+            }
+          ],
+          "name": "row11",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [],
+              "name": "col24",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "TaxAmount",
+                          "name": "TaxAmountLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Tax Amount",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col34",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "format": "",
+                          "name": "TaxAmount",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "numeric",
+                          "value": "${invoice.TaxAmount}",
+                          "valueType": "double"
+                        },
+                        {
+                          "component": "TaxAmount",
+                          "name": "TaxAmountRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "TaxAmount is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col35",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row17",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col25",
+              "type": "col"
+            }
+          ],
+          "name": "row12",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-6",
+              "components": [],
+              "name": "col32",
+              "type": "col"
+            },
+            {
+              "class": "col-md-6",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "class": "col-md-3",
+                      "components": [
+                        {
+                          "component": "GrandTotal",
+                          "name": "GrandTotalLabel",
+                          "style": {
+                            "width": "100%"
+                          },
+                          "text": "Grand Total",
+                          "type": "label"
+                        }
+                      ],
+                      "name": "col36",
+                      "type": "col"
+                    },
+                    {
+                      "class": "col-md-9",
+                      "components": [
+                        {
+                          "disabled": true,
+                          "format": "",
+                          "name": "GrandTotal",
+                          "style": {
+                            "display": "block",
+                            "width": "100%"
+                          },
+                          "type": "numeric",
+                          "value": "${invoice.GrandTotal}",
+                          "valueType": "double"
+                        },
+                        {
+                          "component": "GrandTotal",
+                          "name": "GrandTotalRequiredValidator",
+                          "style": {
+                            "position": "absolute"
+                          },
+                          "text": "GrandTotal is required",
+                          "type": "required-validator"
+                        }
+                      ],
+                      "name": "col37",
+                      "type": "col"
+                    }
+                  ],
+                  "name": "row18",
+                  "style": {
+                    "marginBottom": "1rem"
+                  },
+                  "type": "row"
+                }
+              ],
+              "name": "col33",
+              "type": "col"
+            }
+          ],
+          "name": "row16",
+          "type": "row"
+        },
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "name": "btnSave",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "path": "invoices",
+                                    "type": "navigate"
+                                  }
+                                ]
+                              },
+                              "name": "btnCancel",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "name": "col38",
+                          "type": "col"
+                        }
+                      ],
+                      "name": "row21",
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${invoice}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to update Invoice",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "SimpleInvoice.updateInvoice",
+                        "parameters": [
+                          {
+                            "name": "InvoiceId",
+                            "value": "${parameters.InvoiceId}"
+                          },
+                          {
+                            "name": "Invoice",
+                            "value": "${invoice}"
+                          }
+                        ],
+                        "then": [
+                          {
+                            "path": "invoices",
+                            "type": "navigate"
+                          }
+                        ],
+                        "type": "invoke"
+                      }
+                    ]
+                  },
+                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${invoice != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "style": {
+            "marginTop": "20px"
+          },
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "code": "InvoiceId = int.Parse(InvoiceId);",
+        "type": "execute"
+      },
+      {
+        "error": [],
+        "name": "SimpleInvoice.getInvoiceByInvoiceId",
+        "parameters": [
+          {
+            "name": "InvoiceId",
+            "value": "${parameters.InvoiceId}"
+          }
+        ],
+        "then": [
+          {
+            "name": "invoice",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getCompanies",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getCompaniesForCompanyIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getCustomers",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getCustomersForCustomerIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Customer>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getTaxes",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getTaxesForTaxIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Tax>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getInvoiceLines",
+        "parameters": [
+          {
+            "name": "$filter",
+            "value": "i => i.InvoiceId == ${invoice.InvoiceId}"
+          }
+        ],
+        "then": [
+          {
+            "name": "InvoiceLines",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SelectedTax",
+        "parameters": [
+          {
+            "name": "taxId",
+            "type": "int",
+            "value": "${invoice.TaxId.Value}"
+          },
+          {
+            "name": "invoiceLines",
+            "type": "System.Collections.Generic.IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>",
+            "value": "${InvoiceLines}"
+          }
+        ],
+        "schema": {
+          "$ref": "#/definitions/Task",
+          "dotnetType": "System.Threading.Tasks.Task"
+        },
+        "type": "invoke-method"
+      },
+      {
+        "name": "CompanyAddress",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "CompanyCity",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "CustomerAddress",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "CustomerCity",
+        "type": "set",
+        "value": "\"\"",
+        "valueType": "string"
+      },
+      {
+        "name": "SelectedCompany",
+        "parameters": [
+          {
+            "name": "companyId",
+            "type": "int",
+            "value": "${invoice.CompanyId.Value}"
+          }
+        ],
+        "schema": {
+          "$ref": "#/definitions/Task",
+          "dotnetType": "System.Threading.Tasks.Task"
+        },
+        "type": "invoke-method"
+      },
+      {
+        "name": "SelectedCustomer",
+        "parameters": [
+          {
+            "name": "customerId",
+            "type": "int",
+            "value": "${invoice.CustomerId.Value}"
+          }
+        ],
+        "schema": {
+          "$ref": "#/definitions/Task",
+          "dotnetType": "System.Threading.Tasks.Task"
+        },
+        "type": "invoke-method"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Edit Invoice"
+}

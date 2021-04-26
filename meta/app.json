@@ -1,0 +1,72 @@
+{
+  "dataSources": [
+    "SimpleInvoice"
+  ],
+  "generator": "@radzen/blazor-server",
+  "https": false,
+  "layouts": [
+    "Login",
+    "Main"
+  ],
+  "logo": "",
+  "name": "SimpleInvoiceManagementSoftware",
+  "navigation": [
+    "Companies",
+    "Customers",
+    "Invoices",
+    "Invoice Lines",
+    "Products",
+    "Taxes"
+  ],
+  "pages": [
+    "Companies",
+    "Add Company",
+    "Edit Company",
+    "Customers",
+    "Add Customer",
+    "Edit Customer",
+    "Invoices",
+    "Add Invoice",
+    "Edit Invoice",
+    "Invoice Lines",
+    "Add Invoice Line",
+    "Edit Invoice Line",
+    "Products",
+    "Add Product",
+    "Edit Product",
+    "Taxes",
+    "Add Tax",
+    "Edit Tax",
+    "Application Users",
+    "Application Roles",
+    "Add Application User",
+    "Register Application User",
+    "Edit Application User",
+    "Add Application Role",
+    "Unauthorized",
+    "Profile",
+    "Login"
+  ],
+  "security": {
+    "autoGeneratePages": true,
+    "dataSource": "SimpleInvoice",
+    "duration": 5,
+    "emailConfirmation": false,
+    "layout": "Main",
+    "loginLayout": "Login",
+    "loginPage": "Login",
+    "overwriteExistingPages": true,
+    "provider": "default",
+    "sessionRefresh": false,
+    "smtpFrom": "",
+    "smtpPassword": "",
+    "smtpSSL": false,
+    "smtpServer": "",
+    "smtpUser": ""
+  },
+  "serverLang": "cs",
+  "serverProject": true,
+  "serverVersion": "5",
+  "startPage": "Companies",
+  "theme": "dark"
+}

@@ -1,0 +1,415 @@
+{
+  "access": [
+    "Authenticated"
+  ],
+  "components": [
+    {
+      "components": [
+        {
+          "components": [
+            {
+              "class": "col-md-12",
+              "components": [
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "ProductId",
+                              "name": "ProductIdLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Product",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "data": "${getProductsForProductIdResult}",
+                              "events": {
+                                "change": [
+                                  {
+                                    "name": "SelectedProduct",
+                                    "parameters": [
+                                      {
+                                        "name": "productId",
+                                        "type": "int",
+                                        "value": "${event}"
+                                      },
+                                      {
+                                        "name": "invoiceLine",
+                                        "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                                        "value": "${invoiceline}"
+                                      }
+                                    ],
+                                    "schema": {
+                                      "$ref": "#/definitions/Task",
+                                      "dotnetType": "System.Threading.Tasks.Task"
+                                    },
+                                    "type": "invoke-method"
+                                  }
+                                ]
+                              },
+                              "name": "ProductId",
+                              "placeholder": "Choose Product",
+                              "showSearch": false,
+                              "style": {
+                                "width": "100%"
+                              },
+                              "textProperty": "Name",
+                              "type": "dropdown-datagrid",
+                              "value": "${invoiceline.ProductId}",
+                              "valueProperty": "ProductId",
+                              "valueType": "int?"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Qty",
+                              "name": "QtyLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Qty",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "events": {
+                                "change": [
+                                  {
+                                    "name": "ChangeQty",
+                                    "parameters": [
+                                      {
+                                        "name": "qty",
+                                        "type": "double",
+                                        "value": "${event}"
+                                      },
+                                      {
+                                        "name": "invoiceLine",
+                                        "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                                        "value": "${invoiceline}"
+                                      }
+                                    ],
+                                    "schema": {
+                                      "$ref": "#/definitions/Task",
+                                      "dotnetType": "System.Threading.Tasks.Task"
+                                    },
+                                    "type": "invoke-method"
+                                  }
+                                ]
+                              },
+                              "name": "Qty",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${invoiceline.Qty}",
+                              "valueType": "double"
+                            },
+                            {
+                              "component": "Qty",
+                              "name": "QtyRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Qty is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "UnitPrice",
+                              "name": "UnitPriceLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Unit Price",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "events": {
+                                "change": [
+                                  {
+                                    "name": "ChangePrice",
+                                    "parameters": [
+                                      {
+                                        "name": "price",
+                                        "type": "double",
+                                        "value": "${event}"
+                                      },
+                                      {
+                                        "name": "invoiceLine",
+                                        "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                                        "value": "${invoiceline}"
+                                      }
+                                    ],
+                                    "schema": {
+                                      "$ref": "#/definitions/Task",
+                                      "dotnetType": "System.Threading.Tasks.Task"
+                                    },
+                                    "type": "invoke-method"
+                                  }
+                                ]
+                              },
+                              "name": "UnitPrice",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${invoiceline.UnitPrice}",
+                              "valueType": "double"
+                            },
+                            {
+                              "component": "UnitPrice",
+                              "name": "UnitPriceRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "UnitPrice is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col-md-3",
+                          "components": [
+                            {
+                              "component": "Total",
+                              "name": "TotalLabel",
+                              "style": {
+                                "width": "100%"
+                              },
+                              "text": "Total",
+                              "type": "label"
+                            }
+                          ],
+                          "type": "col"
+                        },
+                        {
+                          "class": "col-md-9",
+                          "components": [
+                            {
+                              "disabled": true,
+                              "name": "Total",
+                              "style": {
+                                "display": "block",
+                                "width": "100%"
+                              },
+                              "type": "numeric",
+                              "value": "${invoiceline.Total}",
+                              "valueType": "double"
+                            },
+                            {
+                              "component": "Total",
+                              "name": "TotalRequiredValidator",
+                              "style": {
+                                "position": "absolute"
+                              },
+                              "text": "Total is required",
+                              "type": "required-validator"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "style": {
+                        "marginBottom": "1rem"
+                      },
+                      "type": "row"
+                    },
+                    {
+                      "components": [
+                        {
+                          "class": "col offset-sm-3",
+                          "components": [
+                            {
+                              "buttonStyle": "primary",
+                              "buttonType": "submit",
+                              "icon": "save",
+                              "name": "btnSave",
+                              "text": "Save",
+                              "type": "button"
+                            },
+                            {
+                              "buttonStyle": "light",
+                              "events": {
+                                "click": [
+                                  {
+                                    "type": "close-popup"
+                                  }
+                                ]
+                              },
+                              "name": "btnCancel",
+                              "style": {
+                                "marginLeft": "1rem"
+                              },
+                              "text": "Cancel",
+                              "type": "button"
+                            }
+                          ],
+                          "type": "col"
+                        }
+                      ],
+                      "type": "row"
+                    }
+                  ],
+                  "data": "${invoiceline}",
+                  "events": {
+                    "submit": [
+                      {
+                        "error": [
+                          {
+                            "detail": "Unable to add new item!",
+                            "severity": "error",
+                            "summary": "Error",
+                            "type": "notify"
+                          }
+                        ],
+                        "name": "ProcessSubmit",
+                        "parameters": [
+                          {
+                            "name": "invoiceLine",
+                            "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                            "value": "${invoiceline}"
+                          }
+                        ],
+                        "schema": {
+                          "$ref": "#/definitions/InvoiceLine",
+                          "async": true,
+                          "dotnetType": "System.Threading.Tasks.Task<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>"
+                        },
+                        "then": [
+                          {
+                            "result": "${invoiceline}",
+                            "type": "close-popup"
+                          }
+                        ],
+                        "type": "invoke-method"
+                      }
+                    ]
+                  },
+                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                  "name": "form0",
+                  "type": "template-form",
+                  "visible": "${invoiceline != null}"
+                }
+              ],
+              "type": "col"
+            }
+          ],
+          "type": "row"
+        }
+      ],
+      "container": "main",
+      "type": "content"
+    }
+  ],
+  "events": {
+    "load": [
+      {
+        "name": "SimpleInvoice.getInvoices",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getInvoicesForInvoiceIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "SimpleInvoice.getProducts",
+        "parameters": [],
+        "then": [
+          {
+            "name": "getProductsForProductIdResult",
+            "type": "set",
+            "value": "${result}",
+            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Product>"
+          }
+        ],
+        "type": "invoke"
+      },
+      {
+        "name": "invoiceline",
+        "type": "set",
+        "value": "new SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine(){}",
+        "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine"
+      },
+      {
+        "name": "InitObject",
+        "parameters": [
+          {
+            "name": "invoiceLine",
+            "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+            "value": "${invoiceline}"
+          }
+        ],
+        "schema": {
+          "$ref": "#/definitions/Task",
+          "dotnetType": "System.Threading.Tasks.Task"
+        },
+        "type": "invoke-method"
+      }
+    ]
+  },
+  "layout": "Main",
+  "name": "Add Invoice Line"
+}
