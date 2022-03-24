@@ -254,7 +254,7 @@
                         "parameters": [
                           {
                             "name": "user",
-                            "type": "SimpleInvoiceManagementSoftware.Models.ApplicationUser",
+                            "type": "TlaxRatio.Models.ApplicationUser",
                             "value": "${user}"
                           },
                           {

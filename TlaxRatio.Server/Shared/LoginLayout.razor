@@ -1,0 +1,27 @@
+﻿@inherits TlaxRatio.Layouts.LoginLayoutComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TlaxRatio.Models.SimpleInvoice
+@using Microsoft.AspNetCore.Identity;
+@using TlaxRatio.Models
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+<RadzenContextMenu />
+
+<RadzenBody @ref="body0" style="margin-left: 0px" Expanded="true">
+  <ChildContent>
+    <div class="row justify-content-center">
+      <div class="justify-content-center col-xl-5 col-md-7">
+        <RadzenCard style="margin-top: 8rem">
+          <ChildContent>
+            <RadzenContentContainer Name="main">
+            @Body
+            </RadzenContentContainer>
+          </ChildContent>
+        </RadzenCard>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenBody>

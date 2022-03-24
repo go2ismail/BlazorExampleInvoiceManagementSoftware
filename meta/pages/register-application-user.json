@@ -37,10 +37,11 @@
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "type": "textbox"
+                              "type": "textbox",
+                              "value": "${user.Name}"
                             },
                             {
-                              "component": "Email",
+                              "component": "userName",
                               "name": "EmailRequiredValidator",
                               "style": {
                                 "position": "absolute"
@@ -82,7 +83,8 @@
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "type": "password"
+                              "type": "password",
+                              "value": "${user.Password}"
                             },
                             {
                               "component": "Password",
@@ -127,7 +129,8 @@
                                 "display": "block",
                                 "width": "100%"
                               },
-                              "type": "password"
+                              "type": "password",
+                              "value": "${user.ConfirmPassword}"
                             },
                             {
                               "component": "ConfirmPassword",
@@ -179,11 +182,7 @@
                     }
                   ],
                   "events": {
-                    "submit": [
-                      {
-                        "type": "back"
-                      }
-                    ]
+                    "submit": []
                   },
                   "method": "post",
                   "action": "account/register",

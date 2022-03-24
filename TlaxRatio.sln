@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "meta", "meta\", "{5270BF30-4F7A-46D8-8E30-0DC996011F85}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63785"
+		Debug.AspNetCompiler.PhysicalPath = "meta\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63785\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63785"
+		Release.AspNetCompiler.PhysicalPath = "meta\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63785\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63785"
+		SlnRelativePath = "meta\"
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TlaxRatio.Server", "TlaxRatio.Server\TlaxRatio.Server.csproj", "{0DA037C2-0ED7-492D-BAD4-332CD80C8F80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TlaxRatio.Entity", "TlaxRatio.Entity\TlaxRatio.Entity.csproj", "{E9777E1A-A41F-4EED-8034-96EEE701A462}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TlaxRatio.RDLC", "TlaxRatio.RDLC\TlaxRatio.RDLC.csproj", "{700EFF25-7425-44D4-9BC1-20B08D1F6746}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5270BF30-4F7A-46D8-8E30-0DC996011F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5270BF30-4F7A-46D8-8E30-0DC996011F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5270BF30-4F7A-46D8-8E30-0DC996011F85}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5270BF30-4F7A-46D8-8E30-0DC996011F85}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{0DA037C2-0ED7-492D-BAD4-332CD80C8F80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA037C2-0ED7-492D-BAD4-332CD80C8F80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA037C2-0ED7-492D-BAD4-332CD80C8F80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA037C2-0ED7-492D-BAD4-332CD80C8F80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9777E1A-A41F-4EED-8034-96EEE701A462}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9777E1A-A41F-4EED-8034-96EEE701A462}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9777E1A-A41F-4EED-8034-96EEE701A462}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9777E1A-A41F-4EED-8034-96EEE701A462}.Release|Any CPU.Build.0 = Release|Any CPU
+		{700EFF25-7425-44D4-9BC1-20B08D1F6746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{700EFF25-7425-44D4-9BC1-20B08D1F6746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{700EFF25-7425-44D4-9BC1-20B08D1F6746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{700EFF25-7425-44D4-9BC1-20B08D1F6746}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4DD93E6-001E-4807-98D0-AB4FF27F240D}
+	EndGlobalSection
+EndGlobal

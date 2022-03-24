@@ -513,7 +513,7 @@
                             "parameters": [
                               {
                                 "name": "invoice",
-                                "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                                "type": "TlaxRatio.Models.SimpleInvoice.Invoice",
                                 "value": "${invoice}"
                               }
                             ],
@@ -528,7 +528,7 @@
                             "parameters": [
                               {
                                 "name": "invoice",
-                                "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                                "type": "TlaxRatio.Models.SimpleInvoice.Invoice",
                                 "value": "${invoice}"
                               }
                             ],
@@ -543,7 +543,7 @@
                       }
                     ]
                   },
-                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice",
+                  "itemType": "TlaxRatio.Models.SimpleInvoice.Invoice",
                   "name": "form0",
                   "type": "template-form",
                   "visible": "${invoice != null}"
@@ -569,7 +569,7 @@
             "name": "getCompaniesForCompanyIdResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Company>"
           }
         ],
         "type": "invoke"
@@ -582,7 +582,7 @@
             "name": "getCustomersForCustomerIdResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Customer>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Customer>"
           }
         ],
         "type": "invoke"
@@ -595,7 +595,7 @@
             "name": "getTaxesForTaxIdResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Tax>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Tax>"
           }
         ],
         "type": "invoke"
@@ -603,8 +603,8 @@
       {
         "name": "invoice",
         "type": "set",
-        "value": "new SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice(){}",
-        "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice"
+        "value": "new TlaxRatio.Models.SimpleInvoice.Invoice(){}",
+        "valueType": "TlaxRatio.Models.SimpleInvoice.Invoice"
       },
       {
         "name": "SimpleInvoice.getInvoiceLines",
@@ -613,7 +613,7 @@
             "name": "getInvoiceLinesResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.InvoiceLine>"
           }
         ],
         "type": "invoke"

@@ -1,0 +1,53 @@
+﻿@page "/taxes"
+@layout MainLayout
+@inherits TlaxRatio.Server.Pages.TaxesComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TlaxRatio.Models.SimpleInvoice
+@using Microsoft.AspNetCore.Identity;
+@using TlaxRatio.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles="Authenticated, Invoicing")]
+
+
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Taxes">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-bottom: 10px; margin-left: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await grid0.GoToPage(0);await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@getTaxesResult" FilterMode="FilterMode.Advanced" TItem="TlaxRatio.Models.SimpleInvoice.Tax" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Tax" Property="TaxId" Title="Tax Id" Visible="false">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Tax" Property="Name" Title="Name">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Tax" Property="Description" Title="Description">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Tax" Property="TaxTariffPercentage" Title="Tax Tariff Percentage">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Tax" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
+              <Template Context="TlaxRatioModelsSimpleInvoiceTax">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Visible="@(TlaxRatioModelsSimpleInvoiceTax.TaxId != 1)" Click="@((args) =>GridDeleteButtonClick(args, TlaxRatioModelsSimpleInvoiceTax))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

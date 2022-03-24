@@ -1,9 +1,0 @@
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\bin\Debug\netstandard2.0\Entity.deps.json
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\bin\Debug\netstandard2.0\Entity.dll
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\bin\Debug\netstandard2.0\Entity.pdb
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\obj\Debug\netstandard2.0\Entity.csprojAssemblyReference.cache
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\obj\Debug\netstandard2.0\Entity.AssemblyInfoInputs.cache
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\obj\Debug\netstandard2.0\Entity.AssemblyInfo.cs
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\obj\Debug\netstandard2.0\Entity.csproj.CoreCompileInputs.cache
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\obj\Debug\netstandard2.0\Entity.dll
-C:\_blazor\product\BlazorExampleGithubInvoiceManagement\Entity\obj\Debug\netstandard2.0\Entity.pdb

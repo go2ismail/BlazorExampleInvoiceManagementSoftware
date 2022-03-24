@@ -323,7 +323,7 @@
                       }
                     ]
                   },
-                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                  "itemType": "TlaxRatio.Models.SimpleInvoice.InvoiceLine",
                   "data": "${invoiceline}",
                   "visible": "${invoiceline != null}"
                 }
@@ -349,7 +349,7 @@
             "name": "invoiceline",
             "type": "set",
             "value": "${result}",
-            "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine"
+            "valueType": "TlaxRatio.Models.SimpleInvoice.InvoiceLine"
           }
         ],
         "error": [],
@@ -363,7 +363,7 @@
             "name": "getInvoicesForInvoiceIdResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Invoice>"
           }
         ],
         "type": "invoke"
@@ -376,7 +376,7 @@
             "name": "getProductsForProductIdResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Product>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Product>"
           }
         ],
         "type": "invoke"

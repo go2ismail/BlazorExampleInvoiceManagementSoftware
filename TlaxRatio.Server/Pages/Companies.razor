@@ -1,0 +1,56 @@
+﻿@page "/"
+@page "/companies"
+@layout MainLayout
+@inherits TlaxRatio.Server.Pages.CompaniesComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TlaxRatio.Models.SimpleInvoice
+@using Microsoft.AspNetCore.Identity;
+@using TlaxRatio.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles="Authenticated, Invoicing")]
+
+
+<RadzenContent Container="main">
+  <ChildContent>
+    <RadzenHeading Size="H1" Text="Companies">
+    </RadzenHeading>
+    <div class="row">
+      <div class="col-md-12">
+        <RadzenButton Icon="add_circle_outline" style="margin-bottom: 10px" Text="Add" Click="@Button0Click">
+        </RadzenButton>
+        <RadzenSplitButton Icon="get_app" style="margin-bottom: 10px; margin-left: 10px" Text="Export" Click="@Splitbutton0Click">
+          <ChildContent>
+            <RadzenSplitButtonItem Text="Excel" Value="xlsx">
+            </RadzenSplitButtonItem>
+            <RadzenSplitButtonItem Text="CSV" Value="csv">
+            </RadzenSplitButtonItem>
+          </ChildContent>
+        </RadzenSplitButton>
+        <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await grid0.GoToPage(0);await Load();})">
+        </RadzenTextBox>
+        <RadzenGrid @ref="grid0" AllowFiltering="true" AllowPaging="true" AllowSorting="true" Data="@getCompaniesResult" FilterMode="FilterMode.Advanced" TItem="TlaxRatio.Models.SimpleInvoice.Company" RowSelect="@Grid0RowSelect">
+          <Columns>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Company" Property="CompanyId" Title="Company Id" Visible="false">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Company" Property="Name" Title="Name">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Company" Property="Description" Title="Description">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Company" Property="Address" Title="Address">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Company" Property="City" Title="City">
+            </RadzenGridColumn>
+            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.Company" Filterable="false" Sortable="false" TextAlign="TextAlign.Center" Width="70px">
+              <Template Context="TlaxRatioModelsSimpleInvoiceCompany">
+                <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Visible="@(TlaxRatioModelsSimpleInvoiceCompany.CompanyId != 1)" Click="@((args) =>GridDeleteButtonClick(args, TlaxRatioModelsSimpleInvoiceCompany))" @onclick:stopPropagation="true">
+                </RadzenButton>
+              </Template>
+            </RadzenGridColumn>
+          </Columns>
+        </RadzenGrid>
+      </div>
+    </div>
+  </ChildContent>
+</RadzenContent>

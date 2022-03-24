@@ -1,0 +1,152 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TlaxRatio.Server
+build_property.RootNamespace = TlaxRatio.Server
+build_property.ProjectDir = D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddApplicationRole.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQXBwbGljYXRpb25Sb2xlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddApplicationUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQXBwbGljYXRpb25Vc2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddCompany.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ29tcGFueS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddCustomer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQ3VzdG9tZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddInvoice.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkSW52b2ljZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddInvoiceLine.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkSW52b2ljZUxpbmUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/AddTax.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVGF4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/ApplicationRoles.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25Sb2xlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/ApplicationUsers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwbGljYXRpb25Vc2Vycy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Companies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFuaWVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Customers.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/EditApplicationUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEFwcGxpY2F0aW9uVXNlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/EditCompany.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdENvbXBhbnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/EditCustomer.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEN1c3RvbWVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/EditInvoice.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEludm9pY2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/EditInvoiceLine.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEludm9pY2VMaW5lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/EditProduct.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFByb2R1Y3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/EditTax.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFRheC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/InvoiceLines.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52b2ljZUxpbmVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Invoices.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW52b2ljZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Products.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/RegisterApplicationUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXJBcHBsaWNhdGlvblVzZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Taxes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGF4ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Unauthorized.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVW5hdXRob3JpemVkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Shared/LoginLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Shared/RedirectToLogin.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFJlZGlyZWN0VG9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

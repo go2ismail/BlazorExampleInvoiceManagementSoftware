@@ -46,7 +46,7 @@
                                       },
                                       {
                                         "name": "invoiceLine",
-                                        "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                                        "type": "TlaxRatio.Models.SimpleInvoice.InvoiceLine",
                                         "value": "${invoiceline}"
                                       }
                                     ],
@@ -112,7 +112,7 @@
                                       },
                                       {
                                         "name": "invoiceLine",
-                                        "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                                        "type": "TlaxRatio.Models.SimpleInvoice.InvoiceLine",
                                         "value": "${invoiceline}"
                                       }
                                     ],
@@ -184,7 +184,7 @@
                                       },
                                       {
                                         "name": "invoiceLine",
-                                        "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                                        "type": "TlaxRatio.Models.SimpleInvoice.InvoiceLine",
                                         "value": "${invoiceline}"
                                       }
                                     ],
@@ -324,14 +324,14 @@
                         "parameters": [
                           {
                             "name": "invoiceLine",
-                            "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                            "type": "TlaxRatio.Models.SimpleInvoice.InvoiceLine",
                             "value": "${invoiceline}"
                           }
                         ],
                         "schema": {
                           "$ref": "#/definitions/InvoiceLine",
                           "async": true,
-                          "dotnetType": "System.Threading.Tasks.Task<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine>"
+                          "dotnetType": "System.Threading.Tasks.Task<TlaxRatio.Models.SimpleInvoice.InvoiceLine>"
                         },
                         "then": [
                           {
@@ -343,7 +343,7 @@
                       }
                     ]
                   },
-                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+                  "itemType": "TlaxRatio.Models.SimpleInvoice.InvoiceLine",
                   "name": "form0",
                   "type": "template-form",
                   "visible": "${invoiceline != null}"
@@ -369,7 +369,7 @@
             "name": "getInvoicesForInvoiceIdResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Invoice>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Invoice>"
           }
         ],
         "type": "invoke"
@@ -382,7 +382,7 @@
             "name": "getProductsForProductIdResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Product>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Product>"
           }
         ],
         "type": "invoke"
@@ -390,15 +390,15 @@
       {
         "name": "invoiceline",
         "type": "set",
-        "value": "new SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine(){}",
-        "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine"
+        "value": "new TlaxRatio.Models.SimpleInvoice.InvoiceLine(){}",
+        "valueType": "TlaxRatio.Models.SimpleInvoice.InvoiceLine"
       },
       {
         "name": "InitObject",
         "parameters": [
           {
             "name": "invoiceLine",
-            "type": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.InvoiceLine",
+            "type": "TlaxRatio.Models.SimpleInvoice.InvoiceLine",
             "value": "${invoiceline}"
           }
         ],

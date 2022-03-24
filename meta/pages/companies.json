@@ -239,7 +239,7 @@
                     ]
                   },
                   "filterMode": "advanced",
-                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company",
+                  "itemType": "TlaxRatio.Models.SimpleInvoice.Company",
                   "name": "grid0",
                   "title": "",
                   "type": "grid"
@@ -303,7 +303,7 @@
             "name": "getCompaniesResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Company>"
           }
         ],
         "type": "invoke"

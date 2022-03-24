@@ -235,7 +235,7 @@
                     ]
                   },
                   "filterMode": "advanced",
-                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Tax",
+                  "itemType": "TlaxRatio.Models.SimpleInvoice.Tax",
                   "name": "grid0",
                   "title": "",
                   "type": "grid"
@@ -287,7 +287,7 @@
             "name": "getTaxesResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Tax>"
+            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.Tax>"
           }
         ],
         "type": "invoke"

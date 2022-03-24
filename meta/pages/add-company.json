@@ -265,7 +265,7 @@
                   },
                   "data": "${company}",
                   "visible": "${company != null}",
-                  "itemType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company"
+                  "itemType": "TlaxRatio.Models.SimpleInvoice.Company"
                 }
               ]
             }
@@ -279,8 +279,8 @@
       {
         "name": "company",
         "type": "set",
-        "value": "new SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company(){}",
-        "valueType": "SimpleInvoiceManagementSoftware.Models.SimpleInvoice.Company"
+        "value": "new TlaxRatio.Models.SimpleInvoice.Company(){}",
+        "valueType": "TlaxRatio.Models.SimpleInvoice.Company"
       }
     ]
   },

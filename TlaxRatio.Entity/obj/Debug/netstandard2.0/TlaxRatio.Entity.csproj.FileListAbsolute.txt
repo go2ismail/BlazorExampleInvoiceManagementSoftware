@@ -1,0 +1,10 @@
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\bin\Debug\netstandard2.0\TlaxRatio.Entity.deps.json
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\bin\Debug\netstandard2.0\TlaxRatio.Entity.dll
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\bin\Debug\netstandard2.0\TlaxRatio.Entity.pdb
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\obj\Debug\netstandard2.0\TlaxRatio.Entity.csproj.AssemblyReference.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\obj\Debug\netstandard2.0\TlaxRatio.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\obj\Debug\netstandard2.0\TlaxRatio.Entity.AssemblyInfoInputs.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\obj\Debug\netstandard2.0\TlaxRatio.Entity.AssemblyInfo.cs
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\obj\Debug\netstandard2.0\TlaxRatio.Entity.csproj.CoreCompileInputs.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\obj\Debug\netstandard2.0\TlaxRatio.Entity.dll
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Entity\obj\Debug\netstandard2.0\TlaxRatio.Entity.pdb

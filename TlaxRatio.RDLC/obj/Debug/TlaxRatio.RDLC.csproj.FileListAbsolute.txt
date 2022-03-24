@@ -1,0 +1,10 @@
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\bin\Debug\RDLC.exe.config
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\bin\Debug\RDLC.exe
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\bin\Debug\RDLC.pdb
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\obj\Debug\TlaxRatio.RDLC.csproj.AssemblyReference.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\obj\Debug\TlaxRatio.RDLC.csproj.SuggestedBindingRedirects.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\obj\Debug\RDLC.Properties.Resources.resources
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\obj\Debug\TlaxRatio.RDLC.csproj.GenerateResource.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\obj\Debug\TlaxRatio.RDLC.csproj.CoreCompileInputs.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\obj\Debug\RDLC.exe
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.RDLC\obj\Debug\RDLC.pdb

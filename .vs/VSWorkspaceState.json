@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\meta",
+    "\\meta\\layouts",
+    "\\meta\\pages",
+    "\\RDLC",
+    "\\RDLC\\reports",
+    "\\server",
+    "\\server\\Controllers",
+    "\\server\\Data",
+    "\\server\\Services"
+  ],
+  "SelectedNode": "\\RDLC\\reports\\Invoice.rdlc",
+  "PreviewInSolutionExplorer": false
+}
