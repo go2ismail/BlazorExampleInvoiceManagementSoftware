@@ -1,20 +1,40 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TlaxRatio.Data;
+using TlaxRatio.Reporting.Api.SDK;
 
 namespace TlaxRatio
 {
     public partial class ExportSimpleInvoiceController : ExportController
     {
         private readonly SimpleInvoiceContext context;
+        private readonly IReportApi reportApi;
 
-        public ExportSimpleInvoiceController(SimpleInvoiceContext context)
+        public ExportSimpleInvoiceController(SimpleInvoiceContext context ,IReportApi reportApi)
         {
             this.context = context;
+            this.reportApi = reportApi;
+          
         }
-        [HttpGet("/export/SimpleInvoice/companies/csv")]
+
+        [HttpGet("/export/SimpleInvoice/invoice/pdf")]
+        [HttpGet("/export/SimpleInvoice/invoice/pdf(invoiceId={invoiceId},fileName='{fileName}')")]
+        public async Task<FileStreamResult> ExportInvoiceToPdf(int invoiceId, string fileName = null) { 
+        
+            var bytes= await this.reportApi.ExportInvoiceToPdf(invoiceId);
+            var pdf = new FileStreamResult(new MemoryStream(bytes), "application/pdf")
+            {
+                FileDownloadName = (!string.IsNullOrEmpty(fileName) ? fileName : "Export") + ".pdf"
+            };
+            return pdf;
+        } 
+     
+
+    [HttpGet("/export/SimpleInvoice/companies/csv")]
         [HttpGet("/export/SimpleInvoice/companies/csv(fileName='{fileName}')")]
         public FileStreamResult ExportCompaniesToCSV(string fileName = null)
         {

@@ -12,6 +12,8 @@ using System.Net.Http;
 using TlaxRatio.Authentication;
 using TlaxRatio.Data;
 using TlaxRatio.Models;
+using TlaxRatio.Server;
+
 namespace TlaxRatio
 {
     public partial class Startup
@@ -71,11 +73,14 @@ namespace TlaxRatio
                 o.MaximumReceiveMessageSize = 10 * 1024 * 1024;
             });
 
+            services.AddHttpClient();
+
             services.AddScoped<DialogService>();
             services.AddScoped<NotificationService>();
             services.AddScoped<TooltipService>();
             services.AddScoped<ContextMenuService>();
             services.AddScoped<GlobalsService>();
+            services.AddReportApi(Configuration);
             OnConfigureServices(services);
         }
 

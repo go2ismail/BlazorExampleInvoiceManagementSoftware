@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "bWWcQWE/LTwXVZM11TLTiTLoNb7cdhv13IUOeHjvEETFMq/zMzqt/WuJucdAYasEUsZwTFvbgVsPalmQj01SrQ==",
+  "dgSpecHash": "cuDpMtBjZOdtBtHettx82QPuC7y8ahnLBBGSYafcMY+bNXrQxbo+H4OIudETBS1ZFBpEYmnxs/uDXM5u5aD1Ag==",
   "success": true,
   "projectFilePath": "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Entity\\TlaxRatio.Entity.csproj",
   "expectedPackageFiles": [
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\bboyraz\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
   ],
   "logs": []

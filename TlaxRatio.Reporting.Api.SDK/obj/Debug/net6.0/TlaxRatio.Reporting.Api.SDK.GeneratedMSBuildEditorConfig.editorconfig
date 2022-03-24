@@ -1,0 +1,11 @@
+is_global = true
+build_property.RefitInternalNamespace = TlaxRatio.Reporting.Api.SDK
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TlaxRatio.Reporting.Api.SDK
+build_property.ProjectDir = D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\

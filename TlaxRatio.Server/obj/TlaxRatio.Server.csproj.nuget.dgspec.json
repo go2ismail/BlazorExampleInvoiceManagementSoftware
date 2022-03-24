@@ -23,15 +23,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.0": {
-            "targetAlias": "netstandard2.0",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -42,15 +42,9 @@
         }
       },
       "frameworks": {
-        "netstandard2.0": {
-          "targetAlias": "netstandard2.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
-            "NETStandard.Library": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.0.3, )",
-              "autoReferenced": true
-            },
             "System.ComponentModel.Annotations": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -66,6 +60,84 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Reporting.Api.SDK\\TlaxRatio.Reporting.Api.SDK.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Reporting.Api.SDK\\TlaxRatio.Reporting.Api.SDK.csproj",
+        "projectName": "TlaxRatio.Reporting.Api.SDK",
+        "projectPath": "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Reporting.Api.SDK\\TlaxRatio.Reporting.Api.SDK.csproj",
+        "packagesPath": "C:\\Users\\bboyraz\\.nuget\\packages\\",
+        "outputPath": "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Reporting.Api.SDK\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\bboyraz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Refit": {
+              "target": "Package",
+              "version": "[6.3.2, )"
+            },
+            "Refit.HttpClientFactory": {
+              "target": "Package",
+              "version": "[6.3.2, )"
+            },
+            "Refit.Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[6.3.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
@@ -101,6 +173,9 @@
             "projectReferences": {
               "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Entity\\TlaxRatio.Entity.csproj": {
                 "projectPath": "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Entity\\TlaxRatio.Entity.csproj"
+              },
+              "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Reporting.Api.SDK\\TlaxRatio.Reporting.Api.SDK.csproj": {
+                "projectPath": "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Reporting.Api.SDK\\TlaxRatio.Reporting.Api.SDK.csproj"
               }
             }
           }
@@ -115,13 +190,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "AspNetCore.Reporting": {
-              "target": "Package",
-              "version": "[2.1.0, )"
-            },
             "DocumentFormat.OpenXml": {
               "target": "Package",
-              "version": "[2.15.0, )"
+              "version": "[2.16.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -153,7 +224,7 @@
             },
             "Radzen.Blazor": {
               "target": "Package",
-              "version": "[3.16.3, )"
+              "version": "[3.17.0, )"
             },
             "System.ComponentModel.Annotations": {
               "target": "Package",

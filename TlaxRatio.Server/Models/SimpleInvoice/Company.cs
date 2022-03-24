@@ -5,37 +5,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TlaxRatio.Models.SimpleInvoice
 {
-  [Table("Company", Schema = "dbo")]
-  public partial class Company
-  {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int CompanyId
+    [Table("Company", Schema = "dbo")]
+    public partial class Company
     {
-      get;
-      set;
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int CompanyId { get; set; }
+        public ICollection<Invoice> Invoices { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
     }
-
-    public ICollection<Invoice> Invoices { get; set; }
-    public string Name
-    {
-      get;
-      set;
-    }
-    public string Description
-    {
-      get;
-      set;
-    }
-    public string Address
-    {
-      get;
-      set;
-    }
-    public string City
-    {
-      get;
-      set;
-    }
-  }
 }

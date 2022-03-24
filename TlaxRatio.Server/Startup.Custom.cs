@@ -44,9 +44,9 @@ namespace TlaxRatio
         partial void OnConfigure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
-            GenerateDatabase();
+          //  GenerateDatabase();
 
-            DataInitialization(app);
+         //   DataInitialization(app);
 
             WebRootPath = env.WebRootPath;
 

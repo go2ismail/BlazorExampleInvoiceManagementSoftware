@@ -1,0 +1,12 @@
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\bin\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.deps.json
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\bin\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.dll
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\bin\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.pdb
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.csproj.AssemblyReference.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.GeneratedMSBuildEditorConfig.editorconfig
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.AssemblyInfoInputs.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.AssemblyInfo.cs
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.csproj.CoreCompileInputs.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.dll
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\refint\TlaxRatio.Reporting.Api.SDK.dll
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.pdb
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api.SDK\obj\Debug\net6.0\ref\TlaxRatio.Reporting.Api.SDK.dll
