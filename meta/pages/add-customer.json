@@ -265,7 +265,7 @@
                   },
                   "data": "${customer}",
                   "visible": "${customer != null}",
-                  "itemType": "TlaxRatio.Models.SimpleInvoice.Customer"
+                  "itemType": "Customer"
                 }
               ]
             }
@@ -279,8 +279,8 @@
       {
         "name": "customer",
         "type": "set",
-        "value": "new TlaxRatio.Models.SimpleInvoice.Customer(){}",
-        "valueType": "TlaxRatio.Models.SimpleInvoice.Customer"
+        "value": "new Customer(){}",
+        "valueType": "Customer"
       }
     ]
   },

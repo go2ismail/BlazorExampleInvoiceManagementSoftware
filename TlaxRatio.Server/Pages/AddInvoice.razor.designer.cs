@@ -1,18 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
-using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using TlaxRatio.Models;
-
+using TlaxRatio.Models.RatioModels;
 namespace TlaxRatio.Server.Pages
 {
     public partial class AddInvoiceComponent : ComponentBase
@@ -54,10 +46,10 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
+        protected RatioDataService SimpleInvoice { get; set; }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.Company> _getCompaniesForCompanyIdResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.Company> getCompaniesForCompanyIdResult
+        IEnumerable<Company> _getCompaniesForCompanyIdResult;
+        protected IEnumerable<Company> getCompaniesForCompanyIdResult
         {
             get
             {
@@ -75,8 +67,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.Customer> _getCustomersForCustomerIdResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.Customer> getCustomersForCustomerIdResult
+        IEnumerable<Customer> _getCustomersForCustomerIdResult;
+        protected IEnumerable<Customer> getCustomersForCustomerIdResult
         {
             get
             {
@@ -94,8 +86,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.Tax> _getTaxesForTaxIdResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.Tax> getTaxesForTaxIdResult
+        IEnumerable<Tax> _getTaxesForTaxIdResult;
+        protected IEnumerable<Tax> getTaxesForTaxIdResult
         {
             get
             {
@@ -113,8 +105,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        TlaxRatio.Models.SimpleInvoice.Invoice _invoice;
-        protected TlaxRatio.Models.SimpleInvoice.Invoice invoice
+        Invoice _invoice;
+        protected Invoice invoice
         {
             get
             {
@@ -132,8 +124,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.InvoiceLine> _getInvoiceLinesResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.InvoiceLine> getInvoiceLinesResult
+        IEnumerable<InvoiceLine> _getInvoiceLinesResult;
+        protected IEnumerable<InvoiceLine> getInvoiceLinesResult
         {
             get
             {
@@ -250,7 +242,7 @@ namespace TlaxRatio.Server.Pages
             var simpleInvoiceGetTaxesResult = await SimpleInvoice.GetTaxes();
             getTaxesForTaxIdResult = simpleInvoiceGetTaxesResult;
 
-            invoice = new TlaxRatio.Models.SimpleInvoice.Invoice(){};
+            invoice = new Invoice(){};
 
             var simpleInvoiceGetInvoiceLinesResult = await SimpleInvoice.GetInvoiceLines();
             getInvoiceLinesResult = simpleInvoiceGetInvoiceLinesResult;
@@ -266,7 +258,7 @@ namespace TlaxRatio.Server.Pages
             await DataInitialization();
         }
 
-        protected async System.Threading.Tasks.Task Form0Submit(TlaxRatio.Models.SimpleInvoice.Invoice args)
+        protected async System.Threading.Tasks.Task Form0Submit(Invoice args)
         {
             try
             {

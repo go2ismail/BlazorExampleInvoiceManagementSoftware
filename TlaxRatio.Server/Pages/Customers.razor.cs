@@ -1,11 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Radzen;
-using Radzen.Blazor;
-
-namespace TlaxRatio.Server.Pages
+﻿namespace TlaxRatio.Server.Pages
 {
     public partial class CustomersComponent
     {

@@ -1,18 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.JSInterop;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
-using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using TlaxRatio.Models;
-
+using TlaxRatio.Models.RatioModels;
 namespace TlaxRatio.Server.Pages
 {
     public partial class AddCustomerComponent : ComponentBase
@@ -54,10 +46,10 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
+        protected RatioDataService SimpleInvoice { get; set; }
 
-        TlaxRatio.Models.SimpleInvoice.Customer _customer;
-        protected TlaxRatio.Models.SimpleInvoice.Customer customer
+        Customer _customer;
+        protected Customer customer
         {
             get
             {
@@ -89,10 +81,10 @@ namespace TlaxRatio.Server.Pages
         }
         protected async System.Threading.Tasks.Task Load()
         {
-            customer = new TlaxRatio.Models.SimpleInvoice.Customer(){};
+            customer = new Customer(){};
         }
 
-        protected async System.Threading.Tasks.Task Form0Submit(TlaxRatio.Models.SimpleInvoice.Customer args)
+        protected async System.Threading.Tasks.Task Form0Submit(Customer args)
         {
             try
             {

@@ -12,10 +12,12 @@ namespace TlaxRatio.Data
     {
         public ApplicationIdentityDbContext(DbContextOptions<ApplicationIdentityDbContext> options) : base(options)
         {
+
         }
 
         public ApplicationIdentityDbContext()
         {
+
         }
 
         partial void OnModelBuilding(ModelBuilder builder);

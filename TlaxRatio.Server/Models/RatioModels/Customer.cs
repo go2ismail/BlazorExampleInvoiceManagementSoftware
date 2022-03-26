@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TlaxRatio.Models.SimpleInvoice
+namespace TlaxRatio.Models.RatioModels
 {
-    [Table("Company", Schema = "dbo")]
-    public partial class Company
+    [Table("Customer", Schema = "dbo")]
+    public partial class Customer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int CompanyId { get; set; }
+        public int CustomerId { get; set; }
         public ICollection<Invoice> Invoices { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
+using TlaxRatio.Models.RatioModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using TlaxRatio.Models;
@@ -54,8 +54,8 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
-        protected RadzenGrid<TlaxRatio.Models.SimpleInvoice.InvoiceLine> grid0;
+        protected RatioDataService SimpleInvoice { get; set; }
+        protected RadzenGrid<InvoiceLine> grid0;
 
         string _search;
         protected string search
@@ -76,8 +76,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.InvoiceLine> _getInvoiceLinesResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.InvoiceLine> getInvoiceLinesResult
+        IEnumerable<InvoiceLine> _getInvoiceLinesResult;
+        protected IEnumerable<InvoiceLine> getInvoiceLinesResult
         {
             get
             {
@@ -140,7 +140,7 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Grid0RowSelect(TlaxRatio.Models.SimpleInvoice.InvoiceLine args)
+        protected async System.Threading.Tasks.Task Grid0RowSelect(InvoiceLine args)
         {
             var dialogResult = await DialogService.OpenAsync<EditInvoiceLine>("Edit Invoice Line", new Dictionary<string, object>() { {"InvoiceLineId", args.InvoiceLineId} });
             await InvokeAsync(() => { StateHasChanged(); });

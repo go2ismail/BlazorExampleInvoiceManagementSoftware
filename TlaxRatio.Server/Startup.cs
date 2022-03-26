@@ -59,7 +59,7 @@ namespace TlaxRatio
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>,
                   ApplicationPrincipalFactory>();
             services.AddScoped<SecurityService>();
-            services.AddScoped<SimpleInvoiceService>();
+            services.AddScoped<RatioDataService>();
 
             services.AddDbContext<TlaxRatio.Data.SimpleInvoiceContext>(options =>
             {

@@ -36,7 +36,7 @@ namespace TlaxRatio.Server.Pages
         [Inject]
         protected IReportApi reportApi { get; set; }
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
+        protected RatioDataService SimpleInvoice { get; set; }
 
 
         [Inject]

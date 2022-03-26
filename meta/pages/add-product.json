@@ -215,7 +215,7 @@
                   },
                   "data": "${product}",
                   "visible": "${product != null}",
-                  "itemType": "TlaxRatio.Models.SimpleInvoice.Product"
+                  "itemType": "Product"
                 }
               ]
             }
@@ -229,8 +229,8 @@
       {
         "name": "product",
         "type": "set",
-        "value": "new TlaxRatio.Models.SimpleInvoice.Product(){}",
-        "valueType": "TlaxRatio.Models.SimpleInvoice.Product"
+        "value": "new Product(){}",
+        "valueType": "Product"
       }
     ]
   },

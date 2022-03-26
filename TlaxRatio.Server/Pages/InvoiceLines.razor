@@ -4,7 +4,7 @@
 
 @using Radzen
 @using Radzen.Blazor
-@using TlaxRatio.Models.SimpleInvoice
+@using TlaxRatio.Models.RatioModels
 @using Microsoft.AspNetCore.Identity;
 @using TlaxRatio.Models
 @using Microsoft.AspNetCore.Authorization
@@ -29,27 +29,27 @@
         </RadzenSplitButton>
         <RadzenTextBox Placeholder="Search ..." style="display: block; margin-bottom: 10px; width: 100%" Name="Textbox0" @oninput="@(async(args) => {search = $"{args.Value}";await grid0.GoToPage(0);await Load();})">
         </RadzenTextBox>
-        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getInvoiceLinesResult" TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" RowSelect="@Grid0RowSelect">
+        <RadzenGrid @ref="grid0" AllowFiltering="true" FilterMode="FilterMode.Advanced" AllowPaging="true" AllowSorting="true" Data="@getInvoiceLinesResult" TItem="InvoiceLine" RowSelect="@Grid0RowSelect">
           <Columns>
-            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="InvoiceLineId" Title="Invoice Line Id">
+            <RadzenGridColumn TItem="InvoiceLine" Property="InvoiceLineId" Title="Invoice Line Id">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="InvoiceId" SortProperty="Invoice.InvoiceNumber" FilterProperty="Invoice.InvoiceNumber" Title="Invoice">
+            <RadzenGridColumn TItem="InvoiceLine" Property="InvoiceId" SortProperty="Invoice.InvoiceNumber" FilterProperty="Invoice.InvoiceNumber" Title="Invoice">
               <Template Context="data">
               @(data.Invoice?.InvoiceNumber)
               </Template>
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="ProductId" SortProperty="Product.Name" FilterProperty="Product.Name" Title="Product">
+            <RadzenGridColumn TItem="InvoiceLine" Property="ProductId" SortProperty="Product.Name" FilterProperty="Product.Name" Title="Product">
               <Template Context="data">
               @(data.Product?.Name)
               </Template>
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="Qty" Title="Qty">
+            <RadzenGridColumn TItem="InvoiceLine" Property="Qty" Title="Qty">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="UnitPrice" Title="Unit Price">
+            <RadzenGridColumn TItem="InvoiceLine" Property="UnitPrice" Title="Unit Price">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="Total" Title="Total">
+            <RadzenGridColumn TItem="InvoiceLine" Property="Total" Title="Total">
             </RadzenGridColumn>
-            <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
+            <RadzenGridColumn TItem="InvoiceLine" Filterable="false" Sortable="false" Width="70px" TextAlign="TextAlign.Center">
               <Template Context="TlaxRatioModelsSimpleInvoiceInvoiceLine">
                 <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>GridDeleteButtonClick(args, TlaxRatioModelsSimpleInvoiceInvoiceLine))" @onclick:stopPropagation="true">
                 </RadzenButton>

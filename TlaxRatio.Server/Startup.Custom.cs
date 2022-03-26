@@ -68,7 +68,7 @@ namespace TlaxRatio
         {
             using (var scope = app.ApplicationServices.CreateScope())
             {
-                var invoiceService = scope.ServiceProvider.GetService<SimpleInvoiceService>();
+                var invoiceService = scope.ServiceProvider.GetService<RatioDataService>();
 
                 if (invoiceService.DataInitializationOk())
                 {

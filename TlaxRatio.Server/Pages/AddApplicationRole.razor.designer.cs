@@ -1,17 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.JSInterop;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
-using Radzen;
-using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using TlaxRatio.Models;
+using Microsoft.JSInterop;
+using Radzen;
+using System.Collections.Generic;
 
 namespace TlaxRatio.Server.Pages
 {
@@ -54,7 +47,7 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
+        protected RatioDataService SimpleInvoice { get; set; }
 
         IdentityRole _role;
         protected IdentityRole role

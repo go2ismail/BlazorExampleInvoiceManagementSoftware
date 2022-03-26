@@ -1,21 +1,17 @@
+using Microsoft.AspNetCore.Components;
+using Microsoft.EntityFrameworkCore;
 using Radzen;
 using System;
-using System.Web;
+using System.Data;
 using System.Linq;
 using System.Linq.Dynamic.Core;
-using System.Data;
 using System.Text.Encodings.Web;
-using Microsoft.Data.SqlClient;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Components;
 using TlaxRatio.Data;
-
+using TlaxRatio.Models.RatioModels;
 namespace TlaxRatio
 {
-    public partial class SimpleInvoiceService
+    public  partial class RatioDataService
     {
         SimpleInvoiceContext Context
         {
@@ -27,42 +23,88 @@ namespace TlaxRatio
 
         private readonly SimpleInvoiceContext context;
         private readonly NavigationManager navigationManager;
-
-        public SimpleInvoiceService(SimpleInvoiceContext context, NavigationManager navigationManager)
+        public RatioDataService(SimpleInvoiceContext context, NavigationManager navigationManager)
         {
             this.context = context;
             this.navigationManager = navigationManager;
         }
-
         public void Reset() => Context.ChangeTracker.Entries().Where(e => e.Entity != null).ToList().ForEach(e => e.State = EntityState.Detached);
+
+        #region Export
 
         public async Task ExportCompaniesToExcel(Query query = null, string fileName = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/companies/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/companies/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
         }
-
         public async Task ExportCompaniesToCSV(Query query = null, string fileName = null)
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/companies/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/companies/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
         }
+        public async Task ExportCustomersToExcel(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/customers/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/customers/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportCustomersToCSV(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/customers/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/customers/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportInvoicesToExcel(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoices/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoices/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportInvoicesToCSV(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
 
-        partial void OnCompaniesRead(ref IQueryable<Models.SimpleInvoice.Company> items);
-
-        public async Task<IQueryable<Models.SimpleInvoice.Company>> GetCompanies(Query query = null)
+        public async Task ExportInvoiceLinesToExcel(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoicelines/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoicelines/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportInvoiceLinesToCSV(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoicelines/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoicelines/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportProductsToExcel(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/products/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/products/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportProductsToCSV(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/products/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/products/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportTaxesToExcel(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/taxes/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/taxes/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public async Task ExportTaxesToCSV(Query query = null, string fileName = null)
+        {
+            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/taxes/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/taxes/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        #endregion
+       
+        #region Company
+        public async Task<Company> CreateCompany(Company company)
+        {
+            OnCompanyCreated(company);
+            Context.Companies.Add(company);
+            Context.SaveChanges();
+            OnAfterCompanyCreated(company);
+            return company;
+        }
+        public async Task<IQueryable<Company>> GetCompanies(Query query = null)
         {
             var items = Context.Companies.AsQueryable();
-
             if (query != null)
             {
                 if (!string.IsNullOrEmpty(query.Expand))
                 {
                     var propertiesToExpand = query.Expand.Split(',');
-                    foreach(var p in propertiesToExpand)
+                    foreach (var p in propertiesToExpand)
                     {
                         items = items.Include(p);
                     }
                 }
-
                 if (!string.IsNullOrEmpty(query.Filter))
                 {
                     if (query.FilterParameters != null)
@@ -74,7 +116,6 @@ namespace TlaxRatio
                         items = items.Where(query.Filter);
                     }
                 }
-
                 if (!string.IsNullOrEmpty(query.OrderBy))
                 {
                     items = items.OrderBy(query.OrderBy);
@@ -92,37 +133,83 @@ namespace TlaxRatio
             }
 
             OnCompaniesRead(ref items);
-
             return await Task.FromResult(items);
         }
-
-        partial void OnCompanyCreated(Models.SimpleInvoice.Company item);
-        partial void OnAfterCompanyCreated(Models.SimpleInvoice.Company item);
-
-        public async Task<Models.SimpleInvoice.Company> CreateCompany(Models.SimpleInvoice.Company company)
+        public async Task<Company> DeleteCompany(int? companyId)
         {
-            OnCompanyCreated(company);
+            var itemToDelete = Context.Companies
+                              .Where(i => i.CompanyId == companyId)
+                              .Include(i => i.Invoices)
+                              .FirstOrDefault();
 
-            Context.Companies.Add(company);
+            if (itemToDelete == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+
+            OnCompanyDeleted(itemToDelete);
+
+            Context.Companies.Remove(itemToDelete);
+
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(itemToDelete).State = EntityState.Unchanged;
+                throw;
+            }
+
+            OnAfterCompanyDeleted(itemToDelete);
+
+            return itemToDelete;
+        }
+        public async Task<Company> GetCompanyByCompanyId(int? companyId)
+        {
+            var items = Context.Companies
+                              .AsNoTracking()
+                              .Where(i => i.CompanyId == companyId);
+
+            var itemToReturn = items.FirstOrDefault();
+
+            OnCompanyGet(itemToReturn);
+
+            return await Task.FromResult(itemToReturn);
+        }
+        public async Task<Company> CancelCompanyChanges(Company item)
+        {
+            var entityToCancel = Context.Entry(item);
+            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
+            entityToCancel.State = EntityState.Unchanged;
+
+            return item;
+        }
+        public async Task<Company> UpdateCompany(int? companyId, Company company)
+        {
+            OnCompanyUpdated(company);
+
+            var itemToUpdate = Context.Companies
+                              .Where(i => i.CompanyId == companyId)
+                              .FirstOrDefault();
+            if (itemToUpdate == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+            var entryToUpdate = Context.Entry(itemToUpdate);
+            entryToUpdate.CurrentValues.SetValues(company);
+            entryToUpdate.State = EntityState.Modified;
             Context.SaveChanges();
 
-            OnAfterCompanyCreated(company);
+            OnAfterCompanyUpdated(company);
 
             return company;
         }
-        public async Task ExportCustomersToExcel(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/customers/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/customers/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
 
-        public async Task ExportCustomersToCSV(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/customers/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/customers/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
+        #endregion
 
-        partial void OnCustomersRead(ref IQueryable<Models.SimpleInvoice.Customer> items);
-
-        public async Task<IQueryable<Models.SimpleInvoice.Customer>> GetCustomers(Query query = null)
+        #region Customer
+        public async Task<IQueryable<Customer>> GetCustomers(Query query = null)
         {
             var items = Context.Customers.AsQueryable();
 
@@ -131,7 +218,7 @@ namespace TlaxRatio
                 if (!string.IsNullOrEmpty(query.Expand))
                 {
                     var propertiesToExpand = query.Expand.Split(',');
-                    foreach(var p in propertiesToExpand)
+                    foreach (var p in propertiesToExpand)
                     {
                         items = items.Include(p);
                     }
@@ -169,11 +256,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(items);
         }
-
-        partial void OnCustomerCreated(Models.SimpleInvoice.Customer item);
-        partial void OnAfterCustomerCreated(Models.SimpleInvoice.Customer item);
-
-        public async Task<Models.SimpleInvoice.Customer> CreateCustomer(Models.SimpleInvoice.Customer customer)
+        public async Task<Customer> CreateCustomer(Customer customer)
         {
             OnCustomerCreated(customer);
 
@@ -184,19 +267,82 @@ namespace TlaxRatio
 
             return customer;
         }
-        public async Task ExportInvoicesToExcel(Query query = null, string fileName = null)
+        public async Task<Customer> DeleteCustomer(int? customerId)
         {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoices/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoices/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
+            var itemToDelete = Context.Customers
+                              .Where(i => i.CustomerId == customerId)
+                              .Include(i => i.Invoices)
+                              .FirstOrDefault();
 
-        public async Task ExportInvoicesToCSV(Query query = null, string fileName = null)
+            if (itemToDelete == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+
+            OnCustomerDeleted(itemToDelete);
+
+            Context.Customers.Remove(itemToDelete);
+
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(itemToDelete).State = EntityState.Unchanged;
+                throw;
+            }
+
+            OnAfterCustomerDeleted(itemToDelete);
+
+            return itemToDelete;
+        }
+        public async Task<Customer> GetCustomerByCustomerId(int? customerId)
         {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+            var items = Context.Customers
+                              .AsNoTracking()
+                              .Where(i => i.CustomerId == customerId);
+
+            var itemToReturn = items.FirstOrDefault();
+
+            OnCustomerGet(itemToReturn);
+
+            return await Task.FromResult(itemToReturn);
         }
+        public async Task<Customer> CancelCustomerChanges(Customer item)
+        {
+            var entityToCancel = Context.Entry(item);
+            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
+            entityToCancel.State = EntityState.Unchanged;
 
-        partial void OnInvoicesRead(ref IQueryable<Models.SimpleInvoice.Invoice> items);
+            return item;
+        }
+        public async Task<Customer> UpdateCustomer(int? customerId, Customer customer)
+        {
+            OnCustomerUpdated(customer);
 
-        public async Task<IQueryable<Models.SimpleInvoice.Invoice>> GetInvoices(Query query = null)
+            var itemToUpdate = Context.Customers
+                              .Where(i => i.CustomerId == customerId)
+                              .FirstOrDefault();
+            if (itemToUpdate == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+            var entryToUpdate = Context.Entry(itemToUpdate);
+            entryToUpdate.CurrentValues.SetValues(customer);
+            entryToUpdate.State = EntityState.Modified;
+            Context.SaveChanges();
+
+            OnAfterCustomerUpdated(customer);
+
+            return customer;
+        }
+        #endregion
+
+
+       
+       
+        public async Task<IQueryable<Invoice>> GetInvoices(Query query = null)
         {
             var items = Context.Invoices.AsQueryable();
 
@@ -249,11 +395,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(items);
         }
-
-        partial void OnInvoiceCreated(Models.SimpleInvoice.Invoice item);
-        partial void OnAfterInvoiceCreated(Models.SimpleInvoice.Invoice item);
-
-        public async Task<Models.SimpleInvoice.Invoice> CreateInvoice(Models.SimpleInvoice.Invoice invoice)
+        public async Task<Invoice> CreateInvoice(Invoice invoice)
         {
             OnInvoiceCreated(invoice);
 
@@ -264,19 +406,8 @@ namespace TlaxRatio
 
             return invoice;
         }
-        public async Task ExportInvoiceLinesToExcel(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoicelines/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoicelines/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        public async Task ExportInvoiceLinesToCSV(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoicelines/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoicelines/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        partial void OnInvoiceLinesRead(ref IQueryable<Models.SimpleInvoice.InvoiceLine> items);
-
-        public async Task<IQueryable<Models.SimpleInvoice.InvoiceLine>> GetInvoiceLines(Query query = null)
+       
+        public async Task<IQueryable<InvoiceLine>> GetInvoiceLines(Query query = null)
         {
             var items = Context.InvoiceLines.AsQueryable();
 
@@ -327,11 +458,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(items);
         }
-
-        partial void OnInvoiceLineCreated(Models.SimpleInvoice.InvoiceLine item);
-        partial void OnAfterInvoiceLineCreated(Models.SimpleInvoice.InvoiceLine item);
-
-        public async Task<Models.SimpleInvoice.InvoiceLine> CreateInvoiceLine(Models.SimpleInvoice.InvoiceLine invoiceLine)
+        public async Task<InvoiceLine> CreateInvoiceLine(InvoiceLine invoiceLine)
         {
             OnInvoiceLineCreated(invoiceLine);
 
@@ -342,19 +469,8 @@ namespace TlaxRatio
 
             return invoiceLine;
         }
-        public async Task ExportProductsToExcel(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/products/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/products/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        public async Task ExportProductsToCSV(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/products/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/products/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        partial void OnProductsRead(ref IQueryable<Models.SimpleInvoice.Product> items);
-
-        public async Task<IQueryable<Models.SimpleInvoice.Product>> GetProducts(Query query = null)
+       
+        public async Task<IQueryable<Product>> GetProducts(Query query = null)
         {
             var items = Context.Products.AsQueryable();
 
@@ -401,11 +517,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(items);
         }
-
-        partial void OnProductCreated(Models.SimpleInvoice.Product item);
-        partial void OnAfterProductCreated(Models.SimpleInvoice.Product item);
-
-        public async Task<Models.SimpleInvoice.Product> CreateProduct(Models.SimpleInvoice.Product product)
+        public async Task<Product> CreateProduct(Product product)
         {
             OnProductCreated(product);
 
@@ -416,19 +528,8 @@ namespace TlaxRatio
 
             return product;
         }
-        public async Task ExportTaxesToExcel(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/taxes/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/taxes/excel(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        public async Task ExportTaxesToCSV(Query query = null, string fileName = null)
-        {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/taxes/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/taxes/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
-
-        partial void OnTaxesRead(ref IQueryable<Models.SimpleInvoice.Tax> items);
-
-        public async Task<IQueryable<Models.SimpleInvoice.Tax>> GetTaxes(Query query = null)
+       
+        public async Task<IQueryable<Tax>> GetTaxes(Query query = null)
         {
             var items = Context.Taxes.AsQueryable();
 
@@ -475,11 +576,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(items);
         }
-
-        partial void OnTaxCreated(Models.SimpleInvoice.Tax item);
-        partial void OnAfterTaxCreated(Models.SimpleInvoice.Tax item);
-
-        public async Task<Models.SimpleInvoice.Tax> CreateTax(Models.SimpleInvoice.Tax tax)
+        public async Task<Tax> CreateTax(Tax tax)
         {
             OnTaxCreated(tax);
 
@@ -490,175 +587,9 @@ namespace TlaxRatio
 
             return tax;
         }
+       
 
-        partial void OnCompanyDeleted(Models.SimpleInvoice.Company item);
-        partial void OnAfterCompanyDeleted(Models.SimpleInvoice.Company item);
-
-        public async Task<Models.SimpleInvoice.Company> DeleteCompany(int? companyId)
-        {
-            var itemToDelete = Context.Companies
-                              .Where(i => i.CompanyId == companyId)
-                              .Include(i => i.Invoices)
-                              .FirstOrDefault();
-
-            if (itemToDelete == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-
-            OnCompanyDeleted(itemToDelete);
-
-            Context.Companies.Remove(itemToDelete);
-
-            try
-            {
-                Context.SaveChanges();
-            }
-            catch
-            {
-                Context.Entry(itemToDelete).State = EntityState.Unchanged;
-                throw;
-            }
-
-            OnAfterCompanyDeleted(itemToDelete);
-
-            return itemToDelete;
-        }
-
-        partial void OnCompanyGet(Models.SimpleInvoice.Company item);
-
-        public async Task<Models.SimpleInvoice.Company> GetCompanyByCompanyId(int? companyId)
-        {
-            var items = Context.Companies
-                              .AsNoTracking()
-                              .Where(i => i.CompanyId == companyId);
-
-            var itemToReturn = items.FirstOrDefault();
-
-            OnCompanyGet(itemToReturn);
-
-            return await Task.FromResult(itemToReturn);
-        }
-
-        public async Task<Models.SimpleInvoice.Company> CancelCompanyChanges(Models.SimpleInvoice.Company item)
-        {
-            var entityToCancel = Context.Entry(item);
-            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
-            entityToCancel.State = EntityState.Unchanged;
-
-            return item;
-        }
-
-        partial void OnCompanyUpdated(Models.SimpleInvoice.Company item);
-        partial void OnAfterCompanyUpdated(Models.SimpleInvoice.Company item);
-
-        public async Task<Models.SimpleInvoice.Company> UpdateCompany(int? companyId, Models.SimpleInvoice.Company company)
-        {
-            OnCompanyUpdated(company);
-
-            var itemToUpdate = Context.Companies
-                              .Where(i => i.CompanyId == companyId)
-                              .FirstOrDefault();
-            if (itemToUpdate == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-            var entryToUpdate = Context.Entry(itemToUpdate);
-            entryToUpdate.CurrentValues.SetValues(company);
-            entryToUpdate.State = EntityState.Modified;
-            Context.SaveChanges();
-
-            OnAfterCompanyUpdated(company);
-
-            return company;
-        }
-
-        partial void OnCustomerDeleted(Models.SimpleInvoice.Customer item);
-        partial void OnAfterCustomerDeleted(Models.SimpleInvoice.Customer item);
-
-        public async Task<Models.SimpleInvoice.Customer> DeleteCustomer(int? customerId)
-        {
-            var itemToDelete = Context.Customers
-                              .Where(i => i.CustomerId == customerId)
-                              .Include(i => i.Invoices)
-                              .FirstOrDefault();
-
-            if (itemToDelete == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-
-            OnCustomerDeleted(itemToDelete);
-
-            Context.Customers.Remove(itemToDelete);
-
-            try
-            {
-                Context.SaveChanges();
-            }
-            catch
-            {
-                Context.Entry(itemToDelete).State = EntityState.Unchanged;
-                throw;
-            }
-
-            OnAfterCustomerDeleted(itemToDelete);
-
-            return itemToDelete;
-        }
-
-        partial void OnCustomerGet(Models.SimpleInvoice.Customer item);
-
-        public async Task<Models.SimpleInvoice.Customer> GetCustomerByCustomerId(int? customerId)
-        {
-            var items = Context.Customers
-                              .AsNoTracking()
-                              .Where(i => i.CustomerId == customerId);
-
-            var itemToReturn = items.FirstOrDefault();
-
-            OnCustomerGet(itemToReturn);
-
-            return await Task.FromResult(itemToReturn);
-        }
-
-        public async Task<Models.SimpleInvoice.Customer> CancelCustomerChanges(Models.SimpleInvoice.Customer item)
-        {
-            var entityToCancel = Context.Entry(item);
-            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
-            entityToCancel.State = EntityState.Unchanged;
-
-            return item;
-        }
-
-        partial void OnCustomerUpdated(Models.SimpleInvoice.Customer item);
-        partial void OnAfterCustomerUpdated(Models.SimpleInvoice.Customer item);
-
-        public async Task<Models.SimpleInvoice.Customer> UpdateCustomer(int? customerId, Models.SimpleInvoice.Customer customer)
-        {
-            OnCustomerUpdated(customer);
-
-            var itemToUpdate = Context.Customers
-                              .Where(i => i.CustomerId == customerId)
-                              .FirstOrDefault();
-            if (itemToUpdate == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-            var entryToUpdate = Context.Entry(itemToUpdate);
-            entryToUpdate.CurrentValues.SetValues(customer);
-            entryToUpdate.State = EntityState.Modified;
-            Context.SaveChanges();
-
-            OnAfterCustomerUpdated(customer);
-
-            return customer;
-        }
-
-        partial void OnInvoiceDeleted(Models.SimpleInvoice.Invoice item);
-        partial void OnAfterInvoiceDeleted(Models.SimpleInvoice.Invoice item);
-
-        public async Task<Models.SimpleInvoice.Invoice> DeleteInvoice(int? invoiceId)
+        public async Task<Invoice> DeleteInvoice(int? invoiceId)
         {
             var itemToDelete = Context.Invoices
                               .Where(i => i.InvoiceId == invoiceId)
@@ -688,10 +619,7 @@ namespace TlaxRatio
 
             return itemToDelete;
         }
-
-        partial void OnInvoiceGet(Models.SimpleInvoice.Invoice item);
-
-        public async Task<Models.SimpleInvoice.Invoice> GetInvoiceByInvoiceId(int? invoiceId)
+        public async Task<Invoice> GetInvoiceByInvoiceId(int? invoiceId)
         {
             var items = Context.Invoices
                               .AsNoTracking()
@@ -709,8 +637,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(itemToReturn);
         }
-
-        public async Task<Models.SimpleInvoice.Invoice> CancelInvoiceChanges(Models.SimpleInvoice.Invoice item)
+        public async Task<Invoice> CancelInvoiceChanges(Invoice item)
         {
             var entityToCancel = Context.Entry(item);
             entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
@@ -718,11 +645,7 @@ namespace TlaxRatio
 
             return item;
         }
-
-        partial void OnInvoiceUpdated(Models.SimpleInvoice.Invoice item);
-        partial void OnAfterInvoiceUpdated(Models.SimpleInvoice.Invoice item);
-
-        public async Task<Models.SimpleInvoice.Invoice> UpdateInvoice(int? invoiceId, Models.SimpleInvoice.Invoice invoice)
+        public async Task<Invoice> UpdateInvoice(int? invoiceId, Invoice invoice)
         {
             OnInvoiceUpdated(invoice);
 
@@ -742,11 +665,7 @@ namespace TlaxRatio
 
             return invoice;
         }
-
-        partial void OnInvoiceLineDeleted(Models.SimpleInvoice.InvoiceLine item);
-        partial void OnAfterInvoiceLineDeleted(Models.SimpleInvoice.InvoiceLine item);
-
-        public async Task<Models.SimpleInvoice.InvoiceLine> DeleteInvoiceLine(int? invoiceLineId)
+        public async Task<InvoiceLine> DeleteInvoiceLine(int? invoiceLineId)
         {
             var itemToDelete = Context.InvoiceLines
                               .Where(i => i.InvoiceLineId == invoiceLineId)
@@ -775,10 +694,7 @@ namespace TlaxRatio
 
             return itemToDelete;
         }
-
-        partial void OnInvoiceLineGet(Models.SimpleInvoice.InvoiceLine item);
-
-        public async Task<Models.SimpleInvoice.InvoiceLine> GetInvoiceLineByInvoiceLineId(int? invoiceLineId)
+        public async Task<InvoiceLine> GetInvoiceLineByInvoiceLineId(int? invoiceLineId)
         {
             var items = Context.InvoiceLines
                               .AsNoTracking()
@@ -794,8 +710,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(itemToReturn);
         }
-
-        public async Task<Models.SimpleInvoice.InvoiceLine> CancelInvoiceLineChanges(Models.SimpleInvoice.InvoiceLine item)
+        public async Task<InvoiceLine> CancelInvoiceLineChanges(InvoiceLine item)
         {
             var entityToCancel = Context.Entry(item);
             entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
@@ -803,11 +718,7 @@ namespace TlaxRatio
 
             return item;
         }
-
-        partial void OnInvoiceLineUpdated(Models.SimpleInvoice.InvoiceLine item);
-        partial void OnAfterInvoiceLineUpdated(Models.SimpleInvoice.InvoiceLine item);
-
-        public async Task<Models.SimpleInvoice.InvoiceLine> UpdateInvoiceLine(int? invoiceLineId, Models.SimpleInvoice.InvoiceLine invoiceLine)
+        public async Task<InvoiceLine> UpdateInvoiceLine(int? invoiceLineId, InvoiceLine invoiceLine)
         {
             OnInvoiceLineUpdated(invoiceLine);
 
@@ -827,11 +738,7 @@ namespace TlaxRatio
 
             return invoiceLine;
         }
-
-        partial void OnProductDeleted(Models.SimpleInvoice.Product item);
-        partial void OnAfterProductDeleted(Models.SimpleInvoice.Product item);
-
-        public async Task<Models.SimpleInvoice.Product> DeleteProduct(int? productId)
+        public async Task<Product> DeleteProduct(int? productId)
         {
             var itemToDelete = Context.Products
                               .Where(i => i.ProductId == productId)
@@ -861,10 +768,7 @@ namespace TlaxRatio
 
             return itemToDelete;
         }
-
-        partial void OnProductGet(Models.SimpleInvoice.Product item);
-
-        public async Task<Models.SimpleInvoice.Product> GetProductByProductId(int? productId)
+        public async Task<Product> GetProductByProductId(int? productId)
         {
             var items = Context.Products
                               .AsNoTracking()
@@ -876,8 +780,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(itemToReturn);
         }
-
-        public async Task<Models.SimpleInvoice.Product> CancelProductChanges(Models.SimpleInvoice.Product item)
+        public async Task<Product> CancelProductChanges(Product item)
         {
             var entityToCancel = Context.Entry(item);
             entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
@@ -885,11 +788,7 @@ namespace TlaxRatio
 
             return item;
         }
-
-        partial void OnProductUpdated(Models.SimpleInvoice.Product item);
-        partial void OnAfterProductUpdated(Models.SimpleInvoice.Product item);
-
-        public async Task<Models.SimpleInvoice.Product> UpdateProduct(int? productId, Models.SimpleInvoice.Product product)
+        public async Task<Product> UpdateProduct(int? productId, Product product)
         {
             OnProductUpdated(product);
 
@@ -909,11 +808,7 @@ namespace TlaxRatio
 
             return product;
         }
-
-        partial void OnTaxDeleted(Models.SimpleInvoice.Tax item);
-        partial void OnAfterTaxDeleted(Models.SimpleInvoice.Tax item);
-
-        public async Task<Models.SimpleInvoice.Tax> DeleteTax(int? taxId)
+        public async Task<Tax> DeleteTax(int? taxId)
         {
             var itemToDelete = Context.Taxes
                               .Where(i => i.TaxId == taxId)
@@ -943,10 +838,7 @@ namespace TlaxRatio
 
             return itemToDelete;
         }
-
-        partial void OnTaxGet(Models.SimpleInvoice.Tax item);
-
-        public async Task<Models.SimpleInvoice.Tax> GetTaxByTaxId(int? taxId)
+        public async Task<Tax> GetTaxByTaxId(int? taxId)
         {
             var items = Context.Taxes
                               .AsNoTracking()
@@ -958,8 +850,7 @@ namespace TlaxRatio
 
             return await Task.FromResult(itemToReturn);
         }
-
-        public async Task<Models.SimpleInvoice.Tax> CancelTaxChanges(Models.SimpleInvoice.Tax item)
+        public async Task<Tax> CancelTaxChanges(Tax item)
         {
             var entityToCancel = Context.Entry(item);
             entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
@@ -967,11 +858,7 @@ namespace TlaxRatio
 
             return item;
         }
-
-        partial void OnTaxUpdated(Models.SimpleInvoice.Tax item);
-        partial void OnAfterTaxUpdated(Models.SimpleInvoice.Tax item);
-
-        public async Task<Models.SimpleInvoice.Tax> UpdateTax(int? taxId, Models.SimpleInvoice.Tax tax)
+        public async Task<Tax> UpdateTax(int? taxId, Tax tax)
         {
             OnTaxUpdated(tax);
 
@@ -990,6 +877,61 @@ namespace TlaxRatio
             OnAfterTaxUpdated(tax);
 
             return tax;
+        }
+        public async Task PrintInvoiceToPDF(int invoiceId, string fileName = null)
+        {
+            navigationManager.NavigateTo($"export/SimpleInvoice/invoice/pdf(invoiceId={invoiceId},fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
+        public bool DataInitializationOk()
+        {
+            var result = Context.Companies.Count() > 0;
+            return !result;
+        }
+        public void DataInitialization()
+        {
+            var company = Context.Companies.FirstOrDefault();
+            if (company == null)
+            {
+                company = new Company();
+                company.Name = "YourCompany, Inc.";
+                company.Description = "My next great company.";
+                company.Address = "1st Pajajaran Street.";
+                company.City = "Bandung City.";
+
+                Context.Companies.Add(company);
+
+                var customer = new Customer();
+                customer.Name = "Default Customer";
+                customer.Description = "My best loyal customer";
+                customer.Address = "1st Sudirman Street.";
+                customer.City = "Jakarta City.";
+
+                Context.Customers.Add(customer);
+
+                var officeBasic = new Product();
+                officeBasic.Name = "Basic, MS Office 365.";
+                officeBasic.UnitPrice = 50;
+
+                var officeStandard = new Product();
+                officeStandard.Name = "Standard, MS Office 365.";
+                officeStandard.UnitPrice = 100;
+
+                var officePremium = new Product();
+                officePremium.Name = "Premium, MS Office 365.";
+                officePremium.UnitPrice = 200;
+
+                Context.Products.AddRange(officeBasic, officeStandard, officePremium);
+
+                var tax = new Tax();
+                tax.Name = "VAT";
+                tax.TaxTariffPercentage = 10;
+
+                Context.Taxes.Add(tax);
+
+                Context.SaveChanges();
+
+
+            }
         }
     }
 }

@@ -4,7 +4,7 @@
 
 @using Radzen
 @using Radzen.Blazor
-@using TlaxRatio.Models.SimpleInvoice
+@using TlaxRatio.Models.RatioModels
 @using Microsoft.AspNetCore.Identity;
 @using TlaxRatio.Models
 @using Microsoft.AspNetCore.Authorization
@@ -15,7 +15,7 @@
   <ChildContent>
     <div class="row">
       <div class="col-md-12">
-        <RadzenTemplateForm Data="@invoice" TItem="TlaxRatio.Models.SimpleInvoice.Invoice" Visible="@(invoice != null)" Submit="@Form0Submit">
+        <RadzenTemplateForm Data="@invoice" TItem="Invoice" Visible="@(invoice != null)" Submit="@Form0Submit">
           <ChildContent>
             <div class="row">
               <div class="col-md-4">

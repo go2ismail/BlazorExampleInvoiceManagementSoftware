@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TlaxRatio.Models.SimpleInvoice
+namespace TlaxRatio.Models.RatioModels
 {
     [Table("InvoiceLine", Schema = "dbo")]
     public partial class InvoiceLine

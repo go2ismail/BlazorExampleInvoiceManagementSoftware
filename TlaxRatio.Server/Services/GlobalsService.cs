@@ -1,12 +1,3 @@
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using TlaxRatio.Models;
-using TlaxRatio.Models.SimpleInvoice;
-using Radzen;
-
 namespace TlaxRatio
 {
     public partial class GlobalsService

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
+using TlaxRatio.Models.RatioModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using TlaxRatio.Models;
@@ -54,8 +54,8 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
-        protected RadzenGrid<TlaxRatio.Models.SimpleInvoice.Invoice> grid0;
+        protected RatioDataService SimpleInvoice { get; set; }
+        protected RadzenGrid<Invoice> grid0;
 
         string _search;
         protected string search
@@ -76,8 +76,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.Invoice> _getInvoicesResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.Invoice> getInvoicesResult
+        IEnumerable<Invoice> _getInvoicesResult;
+        protected IEnumerable<Invoice> getInvoicesResult
         {
             get
             {
@@ -140,7 +140,7 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Grid0RowSelect(TlaxRatio.Models.SimpleInvoice.Invoice args)
+        protected async System.Threading.Tasks.Task Grid0RowSelect(Invoice args)
         {
             UriHelper.NavigateTo($"edit-invoice/{args.InvoiceId}");
         }

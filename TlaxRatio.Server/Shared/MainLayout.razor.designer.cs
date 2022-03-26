@@ -29,7 +29,7 @@ namespace TlaxRatio.Layouts
         protected SecurityService Security { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
+        protected RatioDataService SimpleInvoice { get; set; }
 
         protected RadzenBody body0;
         protected RadzenSidebar sidebar0;

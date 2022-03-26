@@ -3,8 +3,15 @@
     "",
     "\\TlaxRatio.Reporting.Api",
     "\\TlaxRatio.Reporting.Api\\Reports",
-    "\\TlaxRatio.Server"
+    "\\TlaxRatio.Server",
+    "\\TlaxRatio.Server\\Controllers",
+    "\\TlaxRatio.Server\\Models",
+    "\\TlaxRatio.Server\\Models\\SimpleInvoice",
+    "\\TlaxRatio.Server\\Pages",
+    "\\TlaxRatio.Server\\Services",
+    "\\TlaxRatio.Server\\wwwroot",
+    "\\TlaxRatio.Server\\wwwroot\\js"
   ],
-  "SelectedNode": "\\TlaxRatio.Reporting.Api\\Reports\\Arti.rdlc",
+  "SelectedNode": "\\TlaxRatio.Server\\Pages\\EditInvoice.razor",
   "PreviewInSolutionExplorer": false
 }

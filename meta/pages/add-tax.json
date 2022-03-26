@@ -215,7 +215,7 @@
                   },
                   "data": "${tax}",
                   "visible": "${tax != null}",
-                  "itemType": "TlaxRatio.Models.SimpleInvoice.Tax"
+                  "itemType": "Tax"
                 }
               ]
             }
@@ -229,8 +229,8 @@
       {
         "name": "tax",
         "type": "set",
-        "value": "new TlaxRatio.Models.SimpleInvoice.Tax(){}",
-        "valueType": "TlaxRatio.Models.SimpleInvoice.Tax"
+        "value": "new Tax(){}",
+        "valueType": "Tax"
       }
     ]
   },

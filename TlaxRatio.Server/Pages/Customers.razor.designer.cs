@@ -1,18 +1,11 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.JSInterop;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
 using Radzen;
 using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using TlaxRatio.Models;
-
+using System.Collections.Generic;
+using TlaxRatio.Models.RatioModels;
 namespace TlaxRatio.Server.Pages
 {
     public partial class CustomersComponent : ComponentBase
@@ -54,8 +47,9 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
-        protected RadzenGrid<TlaxRatio.Models.SimpleInvoice.Customer> grid0;
+        protected RatioDataService SimpleInvoice { get; set; }
+
+        protected RadzenGrid<Customer> grid0;
 
         string _search;
         protected string search
@@ -76,8 +70,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.Customer> _getCustomersResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.Customer> getCustomersResult
+        IEnumerable<Customer> _getCustomersResult;
+        protected IEnumerable<Customer> getCustomersResult
         {
             get
             {
@@ -140,7 +134,7 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Grid0RowSelect(TlaxRatio.Models.SimpleInvoice.Customer args)
+        protected async System.Threading.Tasks.Task Grid0RowSelect(Customer args)
         {
             var dialogResult = await DialogService.OpenAsync<EditCustomer>("Edit Customer", new Dictionary<string, object>() { {"CustomerId", args.CustomerId} });
             await InvokeAsync(() => { StateHasChanged(); });

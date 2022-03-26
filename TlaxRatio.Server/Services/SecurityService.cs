@@ -1,20 +1,15 @@
-using System;
-using System.Web;
-using System.Linq;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Components;
-using System.Security.Claims;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Components.Authorization;
-using TlaxRatio.Models;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 using TlaxRatio.Data;
+using TlaxRatio.Models;
 
 namespace TlaxRatio
 {

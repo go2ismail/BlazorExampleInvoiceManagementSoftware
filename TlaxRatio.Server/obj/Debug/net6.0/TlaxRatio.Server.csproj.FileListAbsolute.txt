@@ -1,3 +1,11 @@
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.csproj.AssemblyReference.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.AssemblyInfoInputs.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.AssemblyInfo.cs
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.csproj.CoreCompileInputs.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.MvcApplicationPartsAssemblyInfo.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.RazorAssemblyInfo.cache
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.RazorAssemblyInfo.cs
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\bin\Debug\net6.0\wwwroot\reports\Invoice.rdlc
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\bin\Debug\net6.0\appsettings.json
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\bin\Debug\net6.0\TlaxRatio.Server.staticwebassets.runtime.json
@@ -61,14 +69,6 @@ D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\bin\De
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\bin\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.dll
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\bin\Debug\net6.0\TlaxRatio.Entity.pdb
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\bin\Debug\net6.0\TlaxRatio.Reporting.Api.SDK.pdb
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.csproj.AssemblyReference.cache
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.GeneratedMSBuildEditorConfig.editorconfig
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.AssemblyInfoInputs.cache
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.AssemblyInfo.cs
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.csproj.CoreCompileInputs.cache
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.MvcApplicationPartsAssemblyInfo.cache
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.RazorAssemblyInfo.cache
-D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\TlaxRatio.Server.RazorAssemblyInfo.cs
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\staticwebassets.build.json
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\staticwebassets.development.json
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Server\obj\Debug\net6.0\scopedcss\bundle\TlaxRatio.Server.styles.css

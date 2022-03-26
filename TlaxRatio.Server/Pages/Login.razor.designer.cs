@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Radzen;
 using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
+using TlaxRatio.Models.RatioModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using TlaxRatio.Models;
@@ -52,7 +52,7 @@ namespace TlaxRatio.Server.Pages
 
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
+        protected RatioDataService SimpleInvoice { get; set; }
 
         protected override async System.Threading.Tasks.Task OnInitializedAsync()
         {

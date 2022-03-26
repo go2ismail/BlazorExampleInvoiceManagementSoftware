@@ -1,18 +1,11 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.JSInterop;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
 using Radzen;
 using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using TlaxRatio.Models;
-using TlaxRatio.Server.Pages;
+using System.Collections.Generic;
+using TlaxRatio.Models.RatioModels;
 
 namespace TlaxRatio.Server.Pages
 {
@@ -55,8 +48,8 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
-        protected RadzenGrid<TlaxRatio.Models.SimpleInvoice.Company> grid0;
+        protected RatioDataService SimpleInvoice { get; set; }
+        protected RadzenGrid<Company> grid0;
 
         string _search;
         protected string search
@@ -77,8 +70,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.Company> _getCompaniesResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.Company> getCompaniesResult
+        IEnumerable<Company> _getCompaniesResult;
+        protected IEnumerable<Company> getCompaniesResult
         {
             get
             {
@@ -141,7 +134,7 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Grid0RowSelect(TlaxRatio.Models.SimpleInvoice.Company args)
+        protected async System.Threading.Tasks.Task Grid0RowSelect(Company args)
         {
             var dialogResult = await DialogService.OpenAsync<EditCompany>("Edit Company", new Dictionary<string, object>() { {"CompanyId", args.CompanyId} });
             await InvokeAsync(() => { StateHasChanged(); });

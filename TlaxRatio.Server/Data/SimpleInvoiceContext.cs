@@ -1,12 +1,6 @@
-using System.Reflection;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.Configuration;
 
-using TlaxRatio.Models.SimpleInvoice;
+using TlaxRatio.Models.RatioModels;
 
 namespace TlaxRatio.Data
 {
@@ -26,122 +20,122 @@ namespace TlaxRatio.Data
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .HasOne(i => i.Company)
                   .WithMany(i => i.Invoices)
                   .HasForeignKey(i => i.CompanyId)
                   .HasPrincipalKey(i => i.CompanyId);
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .HasOne(i => i.Customer)
                   .WithMany(i => i.Invoices)
                   .HasForeignKey(i => i.CustomerId)
                   .HasPrincipalKey(i => i.CustomerId);
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .HasOne(i => i.Tax)
                   .WithMany(i => i.Invoices)
                   .HasForeignKey(i => i.TaxId)
                   .HasPrincipalKey(i => i.TaxId);
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .HasOne(i => i.Invoice)
                   .WithMany(i => i.InvoiceLines)
                   .HasForeignKey(i => i.InvoiceId)
                   .HasPrincipalKey(i => i.InvoiceId);
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .HasOne(i => i.Product)
                   .WithMany(i => i.InvoiceLines)
                   .HasForeignKey(i => i.ProductId)
                   .HasPrincipalKey(i => i.ProductId);
 
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.InvoiceDate)
                   .HasColumnType("datetime2");
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.InvoiceDueDate)
                   .HasColumnType("datetime2");
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Company>()
+            builder.Entity<Company>()
                   .Property(p => p.CompanyId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Customer>()
+            builder.Entity<Customer>()
                   .Property(p => p.CustomerId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.InvoiceId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.CompanyId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.CustomerId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.TaxId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.Total)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.Discount)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.BeforeTax)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.TaxAmount)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Invoice>()
+            builder.Entity<Invoice>()
                   .Property(p => p.GrandTotal)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .Property(p => p.InvoiceLineId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .Property(p => p.InvoiceId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .Property(p => p.ProductId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .Property(p => p.Qty)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .Property(p => p.UnitPrice)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.InvoiceLine>()
+            builder.Entity<InvoiceLine>()
                   .Property(p => p.Total)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Product>()
+            builder.Entity<Product>()
                   .Property(p => p.ProductId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Product>()
+            builder.Entity<Product>()
                   .Property(p => p.UnitPrice)
                   .HasPrecision(53, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Tax>()
+            builder.Entity<Tax>()
                   .Property(p => p.TaxId)
                   .HasPrecision(10, 0);
 
-            builder.Entity<TlaxRatio.Models.SimpleInvoice.Tax>()
+            builder.Entity<Tax>()
                   .Property(p => p.TaxTariffPercentage)
                   .HasPrecision(53, 0);
             this.OnModelBuilding(builder);

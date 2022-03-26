@@ -1,17 +1,11 @@
-﻿using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.JSInterop;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
 using Radzen;
 using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
-using TlaxRatio.Models;
+using System.Collections.Generic;
+using TlaxRatio.Models.RatioModels;
 
 namespace TlaxRatio.Server.Pages
 {
@@ -54,8 +48,8 @@ namespace TlaxRatio.Server.Pages
         protected AuthenticationStateProvider AuthenticationStateProvider { get; set; }
 
         [Inject]
-        protected SimpleInvoiceService SimpleInvoice { get; set; }
-        protected RadzenGrid<TlaxRatio.Models.SimpleInvoice.Product> grid0;
+        protected RatioDataService SimpleInvoice { get; set; }
+        protected RadzenGrid<Product> grid0;
 
         string _search;
         protected string search
@@ -76,8 +70,8 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        IEnumerable<TlaxRatio.Models.SimpleInvoice.Product> _getProductsResult;
-        protected IEnumerable<TlaxRatio.Models.SimpleInvoice.Product> getProductsResult
+        IEnumerable<Product> _getProductsResult;
+        protected IEnumerable<Product> getProductsResult
         {
             get
             {
@@ -140,7 +134,7 @@ namespace TlaxRatio.Server.Pages
             }
         }
 
-        protected async System.Threading.Tasks.Task Grid0RowSelect(TlaxRatio.Models.SimpleInvoice.Product args)
+        protected async System.Threading.Tasks.Task Grid0RowSelect(Product args)
         {
             var dialogResult = await DialogService.OpenAsync<EditProduct>("Edit Product", new Dictionary<string, object>() { {"ProductId", args.ProductId} });
             await InvokeAsync(() => { StateHasChanged(); });

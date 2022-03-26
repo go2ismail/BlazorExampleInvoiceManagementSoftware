@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Radzen;
 using Radzen.Blazor;
-using TlaxRatio.Models.SimpleInvoice;
+using TlaxRatio.Models.RatioModels;
 
 namespace TlaxRatio.Server.Pages
 {

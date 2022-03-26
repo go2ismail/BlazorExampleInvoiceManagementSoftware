@@ -250,7 +250,7 @@
                     }
                   ],
                   "type": "grid",
-                  "itemType": "TlaxRatio.Models.SimpleInvoice.InvoiceLine"
+                  "itemType": "InvoiceLine"
                 }
               ]
             }
@@ -286,7 +286,7 @@
             "name": "getInvoiceLinesResult",
             "type": "set",
             "value": "${result}",
-            "valueType": "IEnumerable<TlaxRatio.Models.SimpleInvoice.InvoiceLine>"
+            "valueType": "IEnumerable<InvoiceLine>"
           }
         ],
         "type": "invoke"

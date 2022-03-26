@@ -4,7 +4,7 @@
 
 @using Radzen
 @using Radzen.Blazor
-@using TlaxRatio.Models.SimpleInvoice
+@using TlaxRatio.Models.RatioModels
 @using Microsoft.AspNetCore.Identity;
 @using TlaxRatio.Models
 @using Microsoft.AspNetCore.Authorization
@@ -178,31 +178,31 @@
         <div style="margin-bottom: 20px" class="row">
 
             <div class="col-md-12">
-                <RadzenGrid @ref="grid0" Data="@InvoiceLines" EditMode="DataGridEditMode.Multiple" TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine">
+                <RadzenGrid @ref="grid0" Data="@InvoiceLines" EditMode="DataGridEditMode.Multiple" TItem="InvoiceLine">
                     <Columns>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="InvoiceLineId" Title="Invoice Line Id" Visible="false">
+                        <RadzenGridColumn TItem="InvoiceLine" Property="InvoiceLineId" Title="Invoice Line Id" Visible="false">
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" FilterProperty="Invoice.InvoiceNumber" Property="InvoiceId" SortProperty="Invoice.InvoiceNumber" Title="Invoice" Visible="false">
+                        <RadzenGridColumn TItem="InvoiceLine" FilterProperty="Invoice.InvoiceNumber" Property="InvoiceId" SortProperty="Invoice.InvoiceNumber" Title="Invoice" Visible="false">
                             <Template Context="data">
                                 @(data.Invoice?.InvoiceNumber)
                             </Template>
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="Invoice" Title="Invoice" Visible="false">
+                        <RadzenGridColumn TItem="InvoiceLine" Property="Invoice" Title="Invoice" Visible="false">
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" FilterProperty="Product.Name" Property="ProductId" SortProperty="Product.Name" Title="Product">
+                        <RadzenGridColumn TItem="InvoiceLine" FilterProperty="Product.Name" Property="ProductId" SortProperty="Product.Name" Title="Product">
                             <Template Context="data">
                                 @(data.Product?.Name)
                             </Template>
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="Product" Title="Product" Visible="false">
+                        <RadzenGridColumn TItem="InvoiceLine" Property="Product" Title="Product" Visible="false">
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="Qty" Title="Qty">
+                        <RadzenGridColumn TItem="InvoiceLine" Property="Qty" Title="Qty">
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="UnitPrice" Title="Unit Price">
+                        <RadzenGridColumn TItem="InvoiceLine" Property="UnitPrice" Title="Unit Price">
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine" Property="Total" Title="Total">
+                        <RadzenGridColumn TItem="InvoiceLine" Property="Total" Title="Total">
                         </RadzenGridColumn>
-                        <RadzenGridColumn TItem="TlaxRatio.Models.SimpleInvoice.InvoiceLine">
+                        <RadzenGridColumn TItem="InvoiceLine">
                             <Template Context="TlaxRatioModelsSimpleInvoiceInvoiceLine">
                                 <RadzenButton ButtonStyle="ButtonStyle.Danger" Icon="close" Size="ButtonSize.Small" Click="@((args) =>BtnDeleteClick(args, TlaxRatioModelsSimpleInvoiceInvoiceLine))">
                                 </RadzenButton>
@@ -304,7 +304,7 @@
         </div>
         <div style="margin-top: 20px" class="row">
             <div class="col-md-12">
-                <RadzenTemplateForm Data="@invoice" TItem="TlaxRatio.Models.SimpleInvoice.Invoice" Visible="@(invoice != null)" Submit="@Form0Submit">
+                <RadzenTemplateForm Data="@invoice" TItem="Invoice" Visible="@(invoice != null)" Submit="@Form0Submit">
                     <ChildContent>
                         <div class="row">
                             <div class="col offset-sm-3">
