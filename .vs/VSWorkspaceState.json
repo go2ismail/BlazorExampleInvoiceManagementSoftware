@@ -1,16 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\meta",
-    "\\meta\\layouts",
-    "\\meta\\pages",
-    "\\RDLC",
-    "\\RDLC\\reports",
-    "\\server",
-    "\\server\\Controllers",
-    "\\server\\Data",
-    "\\server\\Services"
+    "\\TlaxRatio.Reporting.Api",
+    "\\TlaxRatio.Reporting.Api\\Reports",
+    "\\TlaxRatio.Server"
   ],
-  "SelectedNode": "\\RDLC\\reports\\Invoice.rdlc",
+  "SelectedNode": "\\TlaxRatio.Reporting.Api\\Reports\\Arti.rdlc",
   "PreviewInSolutionExplorer": false
 }

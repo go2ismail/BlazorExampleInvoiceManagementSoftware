@@ -80,3 +80,4 @@ D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api\obj\Debug\net5.0\TlaxRatio.Reporting.Api.genruntimeconfig.cache
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api\obj\Debug\net5.0\ref\TlaxRatio.Reporting.Api.dll
 D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api\bin\Debug\net5.0\Reports\Invoice.rdlc
+D:\bbGIT\bbteam17\BlazorExampleInvoiceManagementSoftware\TlaxRatio.Reporting.Api\bin\Debug\net5.0\Reports\Arti.rdlc

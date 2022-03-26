@@ -305,6 +305,11 @@ namespace TlaxRatio.Server.Pages
             await ExportPDF(invoice);
         }
 
+        protected void  BtnPreviewClick(MouseEventArgs args)
+        {
+            UriHelper.NavigateTo($"previewPdf/{invoice.InvoiceId}");
+        }
+
         protected async System.Threading.Tasks.Task BtnDeleteClick(MouseEventArgs args, dynamic data)
         {
             try

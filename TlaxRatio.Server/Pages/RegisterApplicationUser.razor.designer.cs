@@ -12,6 +12,7 @@ using TlaxRatio.Models.SimpleInvoice;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using TlaxRatio.Models;
+using Entity;
 
 namespace TlaxRatio.Server.Pages
 {
@@ -96,5 +97,6 @@ namespace TlaxRatio.Server.Pages
             DialogService.Close();
             await JSRuntime.InvokeAsync<string>("window.history.back");
         }
+       
     }
 }

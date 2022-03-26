@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "1PStZ7/8jU6+JIKYw+w+pTmm9XRJOVtjpD8W2oy49fDXlhMJ6OqQLv8zn+lmtXdMJu1CliMGYtmhfxygGdEoiA==",
+  "dgSpecHash": "5XDcCn0xYjJF0hl8NHO6TgjGl7VbAsY9inFBrGYaGT4CN7cJqnAeUjp3AQxhgIELYuoH/tUa75zZIVmKUCYR9g==",
   "success": true,
   "projectFilePath": "D:\\bbGIT\\bbteam17\\BlazorExampleInvoiceManagementSoftware\\TlaxRatio.Server\\TlaxRatio.Server.csproj",
   "expectedPackageFiles": [
@@ -54,7 +54,7 @@
     "C:\\Users\\bboyraz\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\bboyraz\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\bboyraz\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\bboyraz\\.nuget\\packages\\radzen.blazor\\3.17.0\\radzen.blazor.3.17.0.nupkg.sha512",
+    "C:\\Users\\bboyraz\\.nuget\\packages\\radzen.blazor\\3.17.1\\radzen.blazor.3.17.1.nupkg.sha512",
     "C:\\Users\\bboyraz\\.nuget\\packages\\refit\\6.3.2\\refit.6.3.2.nupkg.sha512",
     "C:\\Users\\bboyraz\\.nuget\\packages\\refit.httpclientfactory\\6.3.2\\refit.httpclientfactory.6.3.2.nupkg.sha512",
     "C:\\Users\\bboyraz\\.nuget\\packages\\refit.newtonsoft.json\\6.3.2\\refit.newtonsoft.json.6.3.2.nupkg.sha512",

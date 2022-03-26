@@ -1,0 +1,32 @@
+﻿@page "/previewPdf/{InvoiceId}"
+@layout MainLayout
+@inherits TlaxRatio.Server.Pages.PreviewPdfComponent
+
+@using Radzen
+@using Radzen.Blazor
+@using TlaxRatio.Models.SimpleInvoice
+@using Microsoft.AspNetCore.Identity;
+@using TlaxRatio.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+
+<RadzenContent Container="main">
+  
+      <RadzenPanel AllowCollapse="false" Style="width: 1240px; margin: 10px auto;height:1390px">
+        <HeaderTemplate>
+            <h4 class="m-0 d-flex align-items-center">
+                <RadzenIcon Icon="account_box" Class="mr-1" /><b>Fatura</b>
+            </h4>
+            <RadzenButton Icon="exit_to_app" Text="Backto Invoice" Click="@BtnBacktoInvoiceClick"> </RadzenButton>
+        </HeaderTemplate>
+        <ChildContent>
+            <iframe id="pdfContent" style="width:1200px;height: 1300px; overflow: auto;" ></iframe>
+       </ChildContent>
+      </RadzenPanel>
+    
+ 
+    
+        
+
+</RadzenContent>

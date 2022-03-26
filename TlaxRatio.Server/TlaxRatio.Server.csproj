@@ -18,7 +18,7 @@
 		</PackageReference>
 		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="4.1.0" />
-		<PackageReference Include="Radzen.Blazor" Version="3.17.0" />
+		<PackageReference Include="Radzen.Blazor" Version="3.17.1" />
 		<PackageReference Include="DocumentFormat.OpenXml" Version="2.16.0" />
 	</ItemGroup>
 	<ItemGroup>

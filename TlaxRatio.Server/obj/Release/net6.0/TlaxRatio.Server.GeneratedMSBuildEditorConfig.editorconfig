@@ -108,6 +108,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/PreviewPdf.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJldmlld1BkZi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/bbGIT/bbteam17/BlazorExampleInvoiceManagementSoftware/TlaxRatio.Server/Pages/Products.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

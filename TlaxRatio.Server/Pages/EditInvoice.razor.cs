@@ -14,7 +14,6 @@ namespace TlaxRatio.Server.Pages
         {
             await SimpleInvoice.PrintInvoiceToPDF(invoice.InvoiceId, invoice.InvoiceNumber);
         }
-
         public async Task RecalculateMasterAfterChildDelete(Invoice invoice, IEnumerable<InvoiceLine> invoiceLines)
         {
             invoice.InvoiceLines = invoiceLines.ToList();
