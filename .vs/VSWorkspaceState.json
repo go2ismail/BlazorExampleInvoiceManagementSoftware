@@ -1,17 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\meta",
+    "\\meta\\pages",
     "\\TlaxRatio.Reporting.Api",
-    "\\TlaxRatio.Reporting.Api\\Reports",
+    "\\TlaxRatio.Reporting.Api\\Controllers",
     "\\TlaxRatio.Server",
-    "\\TlaxRatio.Server\\Controllers",
+    "\\TlaxRatio.Server\\Data",
+    "\\TlaxRatio.Server\\DataCustom",
     "\\TlaxRatio.Server\\Models",
-    "\\TlaxRatio.Server\\Models\\SimpleInvoice",
-    "\\TlaxRatio.Server\\Pages",
-    "\\TlaxRatio.Server\\Services",
-    "\\TlaxRatio.Server\\wwwroot",
-    "\\TlaxRatio.Server\\wwwroot\\js"
+    "\\TlaxRatio.Server\\Models\\RatioModels"
   ],
-  "SelectedNode": "\\TlaxRatio.Server\\Pages\\EditInvoice.razor",
+  "SelectedNode": "\\TlaxRatio.Server\\Models\\RatioModels\\InvoiceLine.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -54,7 +54,10 @@ namespace TlaxRatio
         }
         public async Task ExportInvoicesToCSV(Query query = null, string fileName = null)
         {
-            navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+            navigationManager.NavigateTo(query != null ?
+                
+                 query.ToUrl($"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : 
+                             $"export/simpleinvoice/invoices/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
         }
 
         public async Task ExportInvoiceLinesToExcel(Query query = null, string fileName = null)
@@ -81,8 +84,12 @@ namespace TlaxRatio
         {
             navigationManager.NavigateTo(query != null ? query.ToUrl($"export/simpleinvoice/taxes/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')") : $"export/simpleinvoice/taxes/csv(fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
         }
+        public async Task PrintInvoiceToPDF(int invoiceId, string fileName = null)
+        {
+            navigationManager.NavigateTo($"export/SimpleInvoice/invoice/pdf(invoiceId={invoiceId},fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
+        }
         #endregion
-       
+
         #region Company
         public async Task<Company> CreateCompany(Company company)
         {
@@ -205,7 +212,6 @@ namespace TlaxRatio
 
             return company;
         }
-
         #endregion
 
         #region Customer
@@ -339,9 +345,7 @@ namespace TlaxRatio
         }
         #endregion
 
-
-       
-       
+        #region Invoce
         public async Task<IQueryable<Invoice>> GetInvoices(Query query = null)
         {
             var items = Context.Invoices.AsQueryable();
@@ -357,7 +361,7 @@ namespace TlaxRatio
                 if (!string.IsNullOrEmpty(query.Expand))
                 {
                     var propertiesToExpand = query.Expand.Split(',');
-                    foreach(var p in propertiesToExpand)
+                    foreach (var p in propertiesToExpand)
                     {
                         items = items.Include(p);
                     }
@@ -406,7 +410,6 @@ namespace TlaxRatio
 
             return invoice;
         }
-       
         public async Task<IQueryable<InvoiceLine>> GetInvoiceLines(Query query = null)
         {
             var items = Context.InvoiceLines.AsQueryable();
@@ -420,7 +423,7 @@ namespace TlaxRatio
                 if (!string.IsNullOrEmpty(query.Expand))
                 {
                     var propertiesToExpand = query.Expand.Split(',');
-                    foreach(var p in propertiesToExpand)
+                    foreach (var p in propertiesToExpand)
                     {
                         items = items.Include(p);
                     }
@@ -469,7 +472,160 @@ namespace TlaxRatio
 
             return invoiceLine;
         }
-       
+        public async Task<Invoice> DeleteInvoice(int? invoiceId)
+        {
+            var itemToDelete = Context.Invoices
+                              .Where(i => i.InvoiceId == invoiceId)
+                              .Include(i => i.InvoiceLines)
+                              .FirstOrDefault();
+
+            if (itemToDelete == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+
+            OnInvoiceDeleted(itemToDelete);
+
+            Context.Invoices.Remove(itemToDelete);
+
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(itemToDelete).State = EntityState.Unchanged;
+                throw;
+            }
+
+            OnAfterInvoiceDeleted(itemToDelete);
+
+            return itemToDelete;
+        }
+        public async Task<Invoice> GetInvoiceByInvoiceId(int? invoiceId)
+        {
+            var items = Context.Invoices
+                              .AsNoTracking()
+                              .Where(i => i.InvoiceId == invoiceId);
+
+            items = items.Include(i => i.Company);
+
+            items = items.Include(i => i.Customer);
+
+            items = items.Include(i => i.Tax);
+
+            var itemToReturn = items.FirstOrDefault();
+
+            OnInvoiceGet(itemToReturn);
+
+            return await Task.FromResult(itemToReturn);
+        }
+        public async Task<Invoice> CancelInvoiceChanges(Invoice item)
+        {
+            var entityToCancel = Context.Entry(item);
+            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
+            entityToCancel.State = EntityState.Unchanged;
+
+            return item;
+        }
+        public async Task<Invoice> UpdateInvoice(int? invoiceId, Invoice invoice)
+        {
+            OnInvoiceUpdated(invoice);
+
+            var itemToUpdate = Context.Invoices
+                              .Where(i => i.InvoiceId == invoiceId)
+                              .FirstOrDefault();
+            if (itemToUpdate == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+            var entryToUpdate = Context.Entry(itemToUpdate);
+            entryToUpdate.CurrentValues.SetValues(invoice);
+            entryToUpdate.State = EntityState.Modified;
+            Context.SaveChanges();
+
+            OnAfterInvoiceUpdated(invoice);
+
+            return invoice;
+        }
+        public async Task<InvoiceLine> DeleteInvoiceLine(int? invoiceLineId)
+        {
+            var itemToDelete = Context.InvoiceLines
+                              .Where(i => i.InvoiceLineId == invoiceLineId)
+                              .FirstOrDefault();
+
+            if (itemToDelete == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+
+            OnInvoiceLineDeleted(itemToDelete);
+
+            Context.InvoiceLines.Remove(itemToDelete);
+
+            try
+            {
+                Context.SaveChanges();
+            }
+            catch
+            {
+                Context.Entry(itemToDelete).State = EntityState.Unchanged;
+                throw;
+            }
+
+            OnAfterInvoiceLineDeleted(itemToDelete);
+
+            return itemToDelete;
+        }
+        public async Task<InvoiceLine> GetInvoiceLineByInvoiceLineId(int? invoiceLineId)
+        {
+            var items = Context.InvoiceLines
+                              .AsNoTracking()
+                              .Where(i => i.InvoiceLineId == invoiceLineId);
+
+            items = items.Include(i => i.Invoice);
+
+            items = items.Include(i => i.Product);
+
+            var itemToReturn = items.FirstOrDefault();
+
+            OnInvoiceLineGet(itemToReturn);
+
+            return await Task.FromResult(itemToReturn);
+        }
+        public async Task<InvoiceLine> CancelInvoiceLineChanges(InvoiceLine item)
+        {
+            var entityToCancel = Context.Entry(item);
+            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
+            entityToCancel.State = EntityState.Unchanged;
+
+            return item;
+        }
+        public async Task<InvoiceLine> UpdateInvoiceLine(int? invoiceLineId, InvoiceLine invoiceLine)
+        {
+            OnInvoiceLineUpdated(invoiceLine);
+
+            var itemToUpdate = Context.InvoiceLines
+                              .Where(i => i.InvoiceLineId == invoiceLineId)
+                              .FirstOrDefault();
+            if (itemToUpdate == null)
+            {
+                throw new Exception("Item no longer available");
+            }
+            var entryToUpdate = Context.Entry(itemToUpdate);
+            entryToUpdate.CurrentValues.SetValues(invoiceLine);
+            entryToUpdate.State = EntityState.Modified;
+            Context.SaveChanges();
+
+            OnAfterInvoiceLineUpdated(invoiceLine);
+
+            return invoiceLine;
+        }
+
+        #endregion
+
+        #region Product
+
         public async Task<IQueryable<Product>> GetProducts(Query query = null)
         {
             var items = Context.Products.AsQueryable();
@@ -527,216 +683,6 @@ namespace TlaxRatio
             OnAfterProductCreated(product);
 
             return product;
-        }
-       
-        public async Task<IQueryable<Tax>> GetTaxes(Query query = null)
-        {
-            var items = Context.Taxes.AsQueryable();
-
-            if (query != null)
-            {
-                if (!string.IsNullOrEmpty(query.Expand))
-                {
-                    var propertiesToExpand = query.Expand.Split(',');
-                    foreach(var p in propertiesToExpand)
-                    {
-                        items = items.Include(p);
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(query.Filter))
-                {
-                    if (query.FilterParameters != null)
-                    {
-                        items = items.Where(query.Filter, query.FilterParameters);
-                    }
-                    else
-                    {
-                        items = items.Where(query.Filter);
-                    }
-                }
-
-                if (!string.IsNullOrEmpty(query.OrderBy))
-                {
-                    items = items.OrderBy(query.OrderBy);
-                }
-
-                if (query.Skip.HasValue)
-                {
-                    items = items.Skip(query.Skip.Value);
-                }
-
-                if (query.Top.HasValue)
-                {
-                    items = items.Take(query.Top.Value);
-                }
-            }
-
-            OnTaxesRead(ref items);
-
-            return await Task.FromResult(items);
-        }
-        public async Task<Tax> CreateTax(Tax tax)
-        {
-            OnTaxCreated(tax);
-
-            Context.Taxes.Add(tax);
-            Context.SaveChanges();
-
-            OnAfterTaxCreated(tax);
-
-            return tax;
-        }
-       
-
-        public async Task<Invoice> DeleteInvoice(int? invoiceId)
-        {
-            var itemToDelete = Context.Invoices
-                              .Where(i => i.InvoiceId == invoiceId)
-                              .Include(i => i.InvoiceLines)
-                              .FirstOrDefault();
-
-            if (itemToDelete == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-
-            OnInvoiceDeleted(itemToDelete);
-
-            Context.Invoices.Remove(itemToDelete);
-
-            try
-            {
-                Context.SaveChanges();
-            }
-            catch
-            {
-                Context.Entry(itemToDelete).State = EntityState.Unchanged;
-                throw;
-            }
-
-            OnAfterInvoiceDeleted(itemToDelete);
-
-            return itemToDelete;
-        }
-        public async Task<Invoice> GetInvoiceByInvoiceId(int? invoiceId)
-        {
-            var items = Context.Invoices
-                              .AsNoTracking()
-                              .Where(i => i.InvoiceId == invoiceId);
-
-            items = items.Include(i => i.Company);
-
-            items = items.Include(i => i.Customer);
-
-            items = items.Include(i => i.Tax);
-
-            var itemToReturn = items.FirstOrDefault();
-
-            OnInvoiceGet(itemToReturn);
-
-            return await Task.FromResult(itemToReturn);
-        }
-        public async Task<Invoice> CancelInvoiceChanges(Invoice item)
-        {
-            var entityToCancel = Context.Entry(item);
-            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
-            entityToCancel.State = EntityState.Unchanged;
-
-            return item;
-        }
-        public async Task<Invoice> UpdateInvoice(int? invoiceId, Invoice invoice)
-        {
-            OnInvoiceUpdated(invoice);
-
-            var itemToUpdate = Context.Invoices
-                              .Where(i => i.InvoiceId == invoiceId)
-                              .FirstOrDefault();
-            if (itemToUpdate == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-            var entryToUpdate = Context.Entry(itemToUpdate);
-            entryToUpdate.CurrentValues.SetValues(invoice);
-            entryToUpdate.State = EntityState.Modified;
-            Context.SaveChanges();
-
-            OnAfterInvoiceUpdated(invoice);
-
-            return invoice;
-        }
-        public async Task<InvoiceLine> DeleteInvoiceLine(int? invoiceLineId)
-        {
-            var itemToDelete = Context.InvoiceLines
-                              .Where(i => i.InvoiceLineId == invoiceLineId)
-                              .FirstOrDefault();
-
-            if (itemToDelete == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-
-            OnInvoiceLineDeleted(itemToDelete);
-
-            Context.InvoiceLines.Remove(itemToDelete);
-
-            try
-            {
-                Context.SaveChanges();
-            }
-            catch
-            {
-                Context.Entry(itemToDelete).State = EntityState.Unchanged;
-                throw;
-            }
-
-            OnAfterInvoiceLineDeleted(itemToDelete);
-
-            return itemToDelete;
-        }
-        public async Task<InvoiceLine> GetInvoiceLineByInvoiceLineId(int? invoiceLineId)
-        {
-            var items = Context.InvoiceLines
-                              .AsNoTracking()
-                              .Where(i => i.InvoiceLineId == invoiceLineId);
-
-            items = items.Include(i => i.Invoice);
-
-            items = items.Include(i => i.Product);
-
-            var itemToReturn = items.FirstOrDefault();
-
-            OnInvoiceLineGet(itemToReturn);
-
-            return await Task.FromResult(itemToReturn);
-        }
-        public async Task<InvoiceLine> CancelInvoiceLineChanges(InvoiceLine item)
-        {
-            var entityToCancel = Context.Entry(item);
-            entityToCancel.CurrentValues.SetValues(entityToCancel.OriginalValues);
-            entityToCancel.State = EntityState.Unchanged;
-
-            return item;
-        }
-        public async Task<InvoiceLine> UpdateInvoiceLine(int? invoiceLineId, InvoiceLine invoiceLine)
-        {
-            OnInvoiceLineUpdated(invoiceLine);
-
-            var itemToUpdate = Context.InvoiceLines
-                              .Where(i => i.InvoiceLineId == invoiceLineId)
-                              .FirstOrDefault();
-            if (itemToUpdate == null)
-            {
-               throw new Exception("Item no longer available");
-            }
-            var entryToUpdate = Context.Entry(itemToUpdate);
-            entryToUpdate.CurrentValues.SetValues(invoiceLine);
-            entryToUpdate.State = EntityState.Modified;
-            Context.SaveChanges();
-
-            OnAfterInvoiceLineUpdated(invoiceLine);
-
-            return invoiceLine;
         }
         public async Task<Product> DeleteProduct(int? productId)
         {
@@ -808,6 +754,67 @@ namespace TlaxRatio
 
             return product;
         }
+        #endregion
+
+        #region Tax
+        public async Task<IQueryable<Tax>> GetTaxes(Query query = null)
+        {
+            var items = Context.Taxes.AsQueryable();
+
+            if (query != null)
+            {
+                if (!string.IsNullOrEmpty(query.Expand))
+                {
+                    var propertiesToExpand = query.Expand.Split(',');
+                    foreach (var p in propertiesToExpand)
+                    {
+                        items = items.Include(p);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(query.Filter))
+                {
+                    if (query.FilterParameters != null)
+                    {
+                        items = items.Where(query.Filter, query.FilterParameters);
+                    }
+                    else
+                    {
+                        items = items.Where(query.Filter);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(query.OrderBy))
+                {
+                    items = items.OrderBy(query.OrderBy);
+                }
+
+                if (query.Skip.HasValue)
+                {
+                    items = items.Skip(query.Skip.Value);
+                }
+
+                if (query.Top.HasValue)
+                {
+                    items = items.Take(query.Top.Value);
+                }
+            }
+
+            OnTaxesRead(ref items);
+
+            return await Task.FromResult(items);
+        }
+        public async Task<Tax> CreateTax(Tax tax)
+        {
+            OnTaxCreated(tax);
+
+            Context.Taxes.Add(tax);
+            Context.SaveChanges();
+
+            OnAfterTaxCreated(tax);
+
+            return tax;
+        }
         public async Task<Tax> DeleteTax(int? taxId)
         {
             var itemToDelete = Context.Taxes
@@ -878,10 +885,8 @@ namespace TlaxRatio
 
             return tax;
         }
-        public async Task PrintInvoiceToPDF(int invoiceId, string fileName = null)
-        {
-            navigationManager.NavigateTo($"export/SimpleInvoice/invoice/pdf(invoiceId={invoiceId},fileName='{(!string.IsNullOrEmpty(fileName) ? UrlEncoder.Default.Encode(fileName) : "Export")}')", true);
-        }
+        #endregion
+      
         public bool DataInitializationOk()
         {
             var result = Context.Companies.Count() > 0;

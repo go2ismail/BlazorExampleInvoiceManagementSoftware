@@ -129,14 +129,12 @@ namespace TlaxRatio.Server.Pages
         {
             if (args?.Value == "csv")
             {
-                await SimpleInvoice.ExportInvoicesToCSV(new Query() { Filter = $@"{grid0.Query.Filter}", OrderBy = $"{grid0.Query.OrderBy}", Expand = "Company,Customer,Tax", Select = "InvoiceId,InvoiceNumber,Company.Name,Customer.Name,InvoiceDate,InvoiceDueDate,Tax.Name,Total,Discount,BeforeTax,TaxAmount,GrandTotal" }, $"Invoices");
-
+               await SimpleInvoice.ExportInvoicesToCSV(new Query() { Filter = $@"{grid0.Query.Filter}", OrderBy = $"{grid0.Query.OrderBy}", Expand = "Company,Customer,Tax", Select = "InvoiceId,InvoiceNumber,Company.Name as CompanyName,Customer.Name as CustomerName,InvoiceDate,InvoiceDueDate,Tax.Name as TaxName,Total,Discount,BeforeTax,TaxAmount,GrandTotal" }, $"Invoices");
             }
 
             if (args == null || args.Value == "xlsx")
             {
-                await SimpleInvoice.ExportInvoicesToExcel(new Query() { Filter = $@"{grid0.Query.Filter}", OrderBy = $"{grid0.Query.OrderBy}", Expand = "Company,Customer,Tax", Select = "InvoiceId,InvoiceNumber,Company.Name,Customer.Name,InvoiceDate,InvoiceDueDate,Tax.Name,Total,Discount,BeforeTax,TaxAmount,GrandTotal" }, $"Invoices");
-
+                 await SimpleInvoice.ExportInvoicesToExcel(new Query() { Filter = $@"{grid0.Query.Filter}", OrderBy = $"{grid0.Query.OrderBy}", Expand = "Company,Customer,Tax", Select = "InvoiceId,InvoiceNumber,Company.Name as CompanyName,Customer.Name as CustomerName,InvoiceDate,InvoiceDueDate,Tax.Name as TaxName,Total,Discount,BeforeTax,TaxAmount,GrandTotal" }, $"Invoices");
             }
         }
 

@@ -12,6 +12,7 @@ using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Reflection;
 using Microsoft.AspNetCore.Http;
+using System.Linq.Expressions;
 
 namespace TlaxRatio
 {
@@ -53,7 +54,8 @@ namespace TlaxRatio
 
                 if (query.ContainsKey("$select"))
                 {
-                    return items.Select($"new ({query["$select"].ToString()})");
+                    var sel = query["$select"].ToString();
+                    return items.Select($"new ({sel})");
                 }
             }
 
@@ -350,4 +352,6 @@ namespace TlaxRatio
             workbookStylesPart1.Stylesheet = stylesheet1;
         }
     }
+
+     
 }

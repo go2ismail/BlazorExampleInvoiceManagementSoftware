@@ -1,4 +1,4 @@
-﻿++Solution 'TlaxRatio' ‎(4 of 4 projects)
+﻿++Solution 'TlaxRatio' ‎(6 of 6 projects)
 ++meta
 i:{00000000-0000-0000-0000-000000000000}:meta
 ++data
@@ -12,8 +12,8 @@ i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicem
 ++SimpleInvoice.json
 i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\meta\data\simpleinvoice.json
 ++login.json
-i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\meta\layouts\login.json
 i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\meta\pages\login.json
+i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\meta\layouts\login.json
 ++main.json
 i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\meta\layouts\main.json
 ++add-application-role.json
@@ -68,132 +68,234 @@ i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\meta\pages\taxes.json
 ++unauthorized.json
 i:{5270bf30-4f7a-46d8-8e30-0dc996011f85}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\meta\pages\unauthorized.json
+++TlaxRatio.Entity
+i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.Entity
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\bin\debug\net5.0\tlaxratio.entity.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\tlaxratio.entity.csproj
+++Dependencies
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4001
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:>1047
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1824
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1094
+++Company.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\company.cs
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\company.cs
+++Customer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\customer.cs
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\customer.cs
+++Invoice.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\invoice.cs
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\invoice.cs
+++InvoiceLine.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\invoiceline.cs
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\invoiceline.cs
+++Product.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\product.cs
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\product.cs
+++Tax.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\tax.cs
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\tax.cs
+++Analyzers
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:analyzers
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:analyzers
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:analyzers
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:analyzers
+++Frameworks
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:frameworks
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:frameworks
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:frameworks
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:frameworks
+++Packages
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:packages
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:packages
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:packages
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:packages
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.NETCore.App
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\microsoft.netcore.app
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\microsoft.netcore.app
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api.sdk\microsoft.netcore.app
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\microsoft.netcore.app
+++System.ComponentModel.Annotations (5.0.0)
+i:{e9777e1a-a41f-4eed-8034-96eee701a462}:>1878
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1898
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4033
 ++TlaxRatio.RDLC
-i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.RDLC
 ++Properties
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\properties\
 i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\properties\
 ++References
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++reports
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\reports\
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\reports\
+++Invoice.rdlc
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\reports\invoice.rdlc
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\invoice.rdlc
 ++App.config
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\app.config
 ++Form1.cs
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\form1.cs
 ++Program.cs
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\program.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\program.cs
 i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\program.cs
 ++DataSources
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\datasources\
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\properties\datasources\
 ++AssemblyInfo.cs
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\assemblyinfo.cs
 ++Resources.resx
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\resources.resx
 ++Settings.settings
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\settings.settings
 ++Entity
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++Microsoft.CSharp
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Core
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Data
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Data.DataSetExtensions
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Deployment
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Drawing
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Net.Http
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Windows.Forms
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Xml
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
 ++System.Xml.Linq
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:
-++Invoice.rdlc
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\reports\invoice.rdlc
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\reports\invoice.rdlc
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\invoice.rdlc
 ++Form1.Designer.cs
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\form1.designer.cs
 ++Entity.Invoice.datasource
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\datasources\entity.invoice.datasource
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\properties\datasources\entity.invoice.datasource
 ++Entity.InvoiceLine.datasource
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\datasources\entity.invoiceline.datasource
 ++Resources.Designer.cs
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\resources.designer.cs
 ++Settings.Designer.cs
-i:{700eff25-7425-44d4-9bc1-20b08d1f6746}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.rdlc\properties\settings.designer.cs
-++TlaxRatio.Entity
-i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.Entity
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\tlaxratio.entity.csproj
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\tlaxratio.entity.csproj
-++Dependencies
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:>498
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>821
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1526
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1739
-++Company.cs
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\company.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\company.cs
-++Customer.cs
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\customer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\customer.cs
-++Invoice.cs
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\invoice.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\invoice.cs
-++InvoiceLine.cs
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\invoiceline.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\invoiceline.cs
-++Product.cs
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\product.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\product.cs
-++Tax.cs
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\tax.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\tax.cs
-++Packages
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:packages
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:packages
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:packages
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:packages
-++NETStandard.Library (2.0.3)
-++System.ComponentModel.Annotations (5.0.0)
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:>832
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>844
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1695
+++TlaxRatio.Reporting.Api
+i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.Reporting.Api
+++Connected Services 
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4002
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1827
+++Controllers
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\controllers\
+++ReportController.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\reportcontroller.cs
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\controllers\reportcontroller.cs
+++Reports
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\
+++appsettings.json
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\appsettings.json
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\appsettings.json
+++CustomContext.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\customcontext.cs
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\customcontext.cs
+++Dockerfile
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\dockerfile
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\dockerfile
+++Startup.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\startup.cs
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\startup.cs
+++No service dependencies discovered
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4003
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1829
+++Projects
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:projects
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:projects
+++launchSettings.json
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\properties\launchsettings.json
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\properties\launchsettings.json
+++Arti - Backup (2).rdlc
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\arti - backup (2).rdlc
+++Arti - Backup.rdlc
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\arti - backup.rdlc
+++Arti.rdlc
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\arti.rdlc
+++Invoicex.rdlc
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\invoicex.rdlc
+++appsettings.Development.json
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\appsettings.development.json
+++.dockerignore
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\.dockerignore
+++Microsoft.AspNetCore.Analyzers
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\users\bboyraz\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.5\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\users\bboyraz\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.3\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.AspNetCore.App
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\microsoft.aspnetcore.app
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\microsoft.aspnetcore.app
+++AspNetCore.Reporting (2.1.0)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1899
+++Microsoft.AspNetCore.Identity.EntityFrameworkCore (5.0.5)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1895
+++Microsoft.Data.SqlClient (2.0.1)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1891
+++Microsoft.EntityFrameworkCore (5.0.5)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1890
+++Microsoft.EntityFrameworkCore.Design (5.0.5)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1893
+++Microsoft.EntityFrameworkCore.SqlServer (5.0.5)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1892
+++Microsoft.EntityFrameworkCore.Tools (5.0.5)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1896
+++Microsoft.VisualStudio.Azure.Containers.Tools.Targets (1.14.0)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1897
+++Swashbuckle.AspNetCore (5.6.3)
+i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1894
+++TlaxRatio.Reporting.Api.SDK
+i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.Reporting.Api.SDK
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api.sdk\tlaxratio.reporting.api.sdk.csproj
+++IReportApi.cs
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api.sdk\ireportapi.cs
+++InterfaceStubGeneratorV2
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\users\bboyraz\.nuget\packages\refit\6.3.2\analyzers\dotnet\roslyn4.0\cs\interfacestubgeneratorv2.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\users\bboyraz\.nuget\packages\refit\6.3.2\analyzers\dotnet\roslyn4.0\cs\interfacestubgeneratorv2.dll
+++Microsoft.Extensions.Logging.Generators
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\users\bboyraz\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++System.Text.Json.SourceGeneration
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Refit (6.3.2)
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1859
+++Refit.HttpClientFactory (6.3.2)
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1857
+++Refit.Newtonsoft.Json (6.3.2)
+i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1861
 ++TlaxRatio.Server
 i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.Server
-++Connected Services 
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>822
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1527
 ++wwwroot
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\
 ++Authentication
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\authentication\
-++Controllers
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\controllers\
+++Config
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\config\
+++AccountController.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\accountcontroller.cs
+++ExportController.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\exportcontroller.cs
+++ExportSimpleInvoiceController.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\exportsimpleinvoicecontroller.cs
+++UploadController.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\uploadcontroller.cs
 ++Data
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\
+++Migrations
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\
+++ApplicationIdentityDbContext.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\applicationidentitydbcontext.cs
+++SimpleInvoiceContext.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\simpleinvoicecontext.cs
 ++DataCustom
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\
 ++Models
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\
 ++SimpleInvoice
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\
-++InvoiceLine.Custom.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\invoiceline.custom.cs
 ++ApplicationUser.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\applicationuser.cs
 ++Pages
@@ -201,8 +303,8 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 ++_Host.cshtml
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\_host.cshtml
 ++_Imports.razor
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\_imports.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\_imports.razor
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\_imports.razor
 ++AddApplicationRole.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addapplicationrole.razor
 ++AddApplicationUser.razor
@@ -221,18 +323,10 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addtax.razor
 ++ApplicationRoles.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationroles.razor
-++ApplicationRoles.razor.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationroles.razor.cs
-++ApplicationRoles.razor.designer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationroles.razor.designer.cs
 ++ApplicationUsers.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationusers.razor
 ++Companies.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\companies.razor
-++Companies.razor.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\companies.razor.cs
-++Companies.razor.designer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\companies.razor.designer.cs
 ++Customers.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\customers.razor
 ++Customers.razor.cs
@@ -243,18 +337,10 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editapplicationuser.razor
 ++EditCompany.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcompany.razor
-++EditCompany.razor.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcompany.razor.cs
-++EditCompany.razor.designer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcompany.razor.designer.cs
 ++EditCustomer.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcustomer.razor
 ++EditInvoice.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoice.razor
-++EditInvoice.razor.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoice.razor.cs
-++EditInvoice.razor.designer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoice.razor.designer.cs
 ++EditInvoiceLine.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoiceline.razor
 ++EditProduct.razor
@@ -263,14 +349,12 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\edittax.razor
 ++InvoiceLines.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoicelines.razor
-++InvoiceLines.razor.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoicelines.razor.cs
-++InvoiceLines.razor.designer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoicelines.razor.designer.cs
 ++Invoices.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoices.razor
 ++Login.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\login.razor
+++PreviewPdf.razor
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\previewpdf.razor
 ++Products.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\products.razor
 ++Profile.razor
@@ -288,74 +372,36 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 ++SecurityService.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\services\securityservice.cs
 ++SimpleInvoiceService.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\services\simpleinvoiceservice.cs
-++SimpleInvoiceService.Custom.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\services\simpleinvoiceservice.custom.cs
 ++Shared
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\shared\
 ++App.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\app.razor
-++appsettings.json
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\appsettings.json
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\appsettings.json
-++Dockerfile
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\dockerfile
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\dockerfile
-++Startup.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\startup.cs
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\startup.cs
-++Startup.Custom.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\startup.custom.cs
-++No service dependencies discovered
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>823
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1528
-++Analyzers
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:analyzers
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:analyzers
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:analyzers
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:analyzers
-++Frameworks
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:frameworks
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:frameworks
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:frameworks
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:frameworks
-++Projects
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:projects
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:projects
-++launchSettings.json
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\properties\launchsettings.json
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\properties\launchsettings.json
 ++assets
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\assets\
 ++images
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\images\
+++js
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\js\
 ++favicon.ico
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\favicon.ico
 ++ApplicationPrincipalFactory.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\authentication\applicationprincipalfactory.cs
-++AccountController.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\accountcontroller.cs
-++ExportController.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\exportcontroller.cs
-++ExportSimpleInvoiceController.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\exportsimpleinvoicecontroller.cs
-++ReportController.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\reportcontroller.cs
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\controllers\reportcontroller.cs
-++UploadController.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\uploadcontroller.cs
-++Migrations
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\
-++ApplicationIdentityDbContext.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\applicationidentitydbcontext.cs
-++SimpleInvoiceContext.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\simpleinvoicecontext.cs
-++CustomContext.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\customcontext.cs
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\customcontext.cs
+++ReportApiConfig.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\config\reportapiconfig.cs
+++ExportSimpleInvoiceController.Custom.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\exportsimpleinvoicecontroller.custom.cs
+++00000000000000_CreateIdentitySchema.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\00000000000000_createidentityschema.cs
+++IdentityModelSnapshot.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\identitymodelsnapshot.cs
+++20210426090845_ApplicationDBCreation.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\20210426090845_applicationdbcreation.cs
+++CustomContextModelSnapshot.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\customcontextmodelsnapshot.cs
 ++Invoice.Custom.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\simpleinvoice\invoice.custom.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\invoice.custom.cs
+++InvoiceLine.Custom.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\invoiceline.custom.cs
 ++AddApplicationRole.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addapplicationrole.razor.cs
 ++AddApplicationUser.razor.cs
@@ -372,22 +418,34 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addproduct.razor.cs
 ++AddTax.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addtax.razor.cs
+++ApplicationRoles.razor.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationroles.razor.cs
 ++ApplicationUsers.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationusers.razor.cs
+++Companies.razor.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\companies.razor.cs
 ++EditApplicationUser.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editapplicationuser.razor.cs
+++EditCompany.razor.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcompany.razor.cs
 ++EditCustomer.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcustomer.razor.cs
+++EditInvoice.razor.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoice.razor.cs
 ++EditInvoiceLine.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoiceline.razor.cs
 ++EditProduct.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editproduct.razor.cs
 ++EditTax.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\edittax.razor.cs
+++InvoiceLines.razor.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoicelines.razor.cs
 ++Invoices.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoices.razor.cs
 ++Login.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\login.razor.cs
+++PreviewPdf.razor.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\previewpdf.razor.cs
 ++Products.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\products.razor.cs
 ++Profile.razor.cs
@@ -398,72 +456,39 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\taxes.razor.cs
 ++Unauthorized.razor.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\unauthorized.razor.cs
+++SimpleInvoiceService.Custom.cs
 ++LoginLayout.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\shared\loginlayout.razor
 ++MainLayout.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\shared\mainlayout.razor
 ++RedirectToLogin.razor
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\shared\redirecttologin.razor
-++Microsoft.AspNetCore.Analyzers
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Startup.Custom.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\startup.custom.cs
 ++Microsoft.AspNetCore.App.Analyzers
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
 ++Microsoft.AspNetCore.App.CodeFixes
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
-++Microsoft.AspNetCore.Components.Analyzers
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
-++Microsoft.AspNetCore.Mvc.Analyzers
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
 ++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
-++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-++Microsoft.CodeAnalysis.NetAnalyzers
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-++Microsoft.EntityFrameworkCore.Analyzers
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:c:\users\bboyraz\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.5\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\users\bboyraz\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.5\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-++Microsoft.Extensions.Logging.Generators
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\users\bboyraz\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
 ++Microsoft.NET.Sdk.Razor.SourceGenerators
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
-++System.Text.Json.SourceGeneration
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
-++Microsoft.AspNetCore.App
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\microsoft.aspnetcore.app
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\microsoft.aspnetcore.app
-++Microsoft.NETCore.App
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\microsoft.netcore.app
-i:{e9777e1a-a41f-4eed-8034-96eee701a462}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.entity\microsoft.netcore.app
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\microsoft.netcore.app
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api.sdk\microsoft.netcore.app
-++AspNetCore.Reporting (2.1.0)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1677
-++DocumentFormat.OpenXml (2.15.0)
+++DocumentFormat.OpenXml (2.16.0)
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4034
 ++Microsoft.AspNetCore.Identity.EntityFrameworkCore (6.0.3)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2475
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4030
 ++Microsoft.Data.SqlClient (4.1.0)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2478
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4027
 ++Microsoft.EntityFrameworkCore (6.0.3)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2477
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4026
 ++Microsoft.EntityFrameworkCore.Design (6.0.3)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2480
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4029
 ++Microsoft.EntityFrameworkCore.SqlServer (6.0.3)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2479
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4028
 ++Microsoft.EntityFrameworkCore.Tools (6.0.3)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2482
-++Radzen.Blazor (3.16.3)
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4032
+++Radzen.Blazor (3.17.1)
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>4031
 ++css
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\assets\css\
 ++fonts
@@ -472,16 +497,12 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\images\invoice1.png
 ++invoice2.png
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\images\invoice2.png
-++ExportSimpleInvoiceController.Custom.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\controllers\exportsimpleinvoicecontroller.custom.cs
-++00000000000000_CreateIdentitySchema.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\00000000000000_createidentityschema.cs
-++IdentityModelSnapshot.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\identitymodelsnapshot.cs
-++20210426090845_ApplicationDBCreation.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\20210426090845_applicationdbcreation.cs
-++CustomContextModelSnapshot.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\customcontextmodelsnapshot.cs
+++pdfviewer.js
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\js\pdfviewer.js
+++00000000000000_CreateIdentitySchema.Designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\00000000000000_createidentityschema.designer.cs
+++20210426090845_ApplicationDBCreation.Designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\20210426090845_applicationdbcreation.designer.cs
 ++AddApplicationRole.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addapplicationrole.razor.designer.cs
 ++AddApplicationUser.razor.designer.cs
@@ -498,22 +519,34 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addproduct.razor.designer.cs
 ++AddTax.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\addtax.razor.designer.cs
+++ApplicationRoles.razor.designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationroles.razor.designer.cs
 ++ApplicationUsers.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\applicationusers.razor.designer.cs
+++Companies.razor.designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\companies.razor.designer.cs
 ++EditApplicationUser.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editapplicationuser.razor.designer.cs
+++EditCompany.razor.designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcompany.razor.designer.cs
 ++EditCustomer.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editcustomer.razor.designer.cs
+++EditInvoice.razor.designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoice.razor.designer.cs
 ++EditInvoiceLine.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editinvoiceline.razor.designer.cs
 ++EditProduct.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\editproduct.razor.designer.cs
 ++EditTax.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\edittax.razor.designer.cs
+++InvoiceLines.razor.designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoicelines.razor.designer.cs
 ++Invoices.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\invoices.razor.designer.cs
 ++Login.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\login.razor.designer.cs
+++PreviewPdf.razor.designer.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\previewpdf.razor.designer.cs
 ++Products.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\pages\products.razor.designer.cs
 ++Profile.razor.designer.cs
@@ -568,71 +601,24 @@ i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicem
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\assets\fonts\sourcesanspro-semibold.woff
 ++SourceSansPro-SemiboldIt.woff
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\wwwroot\assets\fonts\sourcesanspro-semiboldit.woff
-++00000000000000_CreateIdentitySchema.Designer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\data\migrations\00000000000000_createidentityschema.designer.cs
-++20210426090845_ApplicationDBCreation.Designer.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\datacustom\migrations\20210426090845_applicationdbcreation.designer.cs
 ++LoginLayout.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\shared\loginlayout.razor.designer.cs
 ++MainLayout.razor.designer.cs
 i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\shared\mainlayout.razor.designer.cs
+++RatioModels
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\models\ratiomodels\
+++TlaxRatio.Server (unloaded)
+++Solution 'TlaxRatio' ‎(5 of 6 projects)
 ++C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Analyzers.dll
-++DocumentFormat.OpenXml (2.11.3)
-++Microsoft.AspNetCore.Identity.EntityFrameworkCore (5.0.5)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1693
-++Microsoft.Data.SqlClient (2.0.1)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1690
-++Microsoft.EntityFrameworkCore (5.0.5)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1689
-++Microsoft.EntityFrameworkCore.Design (5.0.5)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1692
-++Microsoft.EntityFrameworkCore.SqlServer (5.0.5)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1691
-++Microsoft.EntityFrameworkCore.Tools (5.0.5)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1694
-++Radzen.Blazor (3.2.6)
+++C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Components.Analyzers.dll
+++C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Mvc.Analyzers.dll
 ++C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
 ++C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.NetAnalyzers.dll
 ++Solution 'TlaxRatio' ‎(5 of 5 projects)
-++TlaxRatio.Reporting.Api
-i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.Reporting.Api
-++WeatherForecast.cs
-++WeatherForecastController.cs
-++appsettings.Development.json
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\appsettings.development.json
-++C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Components.Analyzers.dll
-++C:\Program Files\dotnet\sdk\6.0.201\Sdks\Microsoft.NET.Sdk.Web\analyzers\cs\Microsoft.AspNetCore.Mvc.Analyzers.dll
-++Microsoft.VisualStudio.Azure.Containers.Tools.Targets (1.14.0)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1630
-++Swashbuckle.AspNetCore (5.6.3)
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:>1629
-++.dockerignore
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\.dockerignore
-++Solution 'TlaxRatio' ‎(6 of 6 projects)
 i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.sln
-++TlaxRatio.Reporting.Api.SDK
-i:{00000000-0000-0000-0000-000000000000}:TlaxRatio.Reporting.Api.SDK
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api.sdk\tlaxratio.reporting.api.sdk.csproj
-++Class1.cs
-++Refit (6.3.2)
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1815
-++InterfaceStubGeneratorV2
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:c:\users\bboyraz\.nuget\packages\refit\6.3.2\analyzers\dotnet\roslyn4.0\cs\interfacestubgeneratorv2.dll
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:c:\users\bboyraz\.nuget\packages\refit\6.3.2\analyzers\dotnet\roslyn4.0\cs\interfacestubgeneratorv2.dll
-++Refit.HttpClientFactory (6.3.2)
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1817
-++Refit.Newtonsoft.Json (6.3.2)
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:>1819
-++IReportApi.cs
-i:{d4b2ced2-992a-4854-9445-202d850f2219}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api.sdk\ireportapi.cs
-++NewFolder
-++Reports
-i:{4646947c-543d-4f5d-845f-3ef2b93d3fe6}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.reporting.api\reports\
-++Config
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\config\
-++ReportApiConfig.cs
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\config\reportapiconfig.cs
-++DocumentFormat.OpenXml (2.16.0)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2476
-++Radzen.Blazor (3.17.0)
-i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:>2481
+++RatioDataService.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\services\ratiodataservice.cs
+++RatioDataService.Custom.cs
+i:{0da037c2-0ed7-492d-bad4-332cd80c8f80}:d:\bbgit\bbteam17\blazorexampleinvoicemanagementsoftware\tlaxratio.server\services\ratiodataservice.custom.cs
+++NavigationService.cs
+++ExportService.cs
