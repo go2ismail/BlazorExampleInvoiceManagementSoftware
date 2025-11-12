@@ -27,6 +27,8 @@ namespace SimpleInvoiceManagementSoftware.Pages
 
         public void OnPropertyChanged(PropertyChangedEventArgs args)
         {
+
+            
         }
 
         [Inject]
